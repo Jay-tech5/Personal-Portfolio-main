@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" fill="none">
+  <rect width="400" height="240" fill="#1a1a2e"/>
+  <circle cx="200" cy="100" r="50" fill="#06b6d4" opacity="0.2"/>
+  <circle cx="200" cy="100" r="35" fill="#06b6d4" opacity="0.4"/>
+  <path d="M200 65 L200 100 L230 115" stroke="#06b6d4" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <rect x="80" y="160" width="240" height="50" rx="8" fill="#12121a" stroke="#06b6d4" stroke-width="1"/>
+  <text x="200" y="192" text-anchor="middle" fill="#06b6d4" font-family="system-ui" font-size="14" font-weight="600">24�C Sunny</text>
+  <text x="200" y="230" text-anchor="middle" fill="#a0a0b0" font-family="system-ui" font-size="12">Weather Dashboard</text>
+</svg>

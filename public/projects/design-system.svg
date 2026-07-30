@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" fill="none">
+  <rect width="400" height="240" fill="#1a1a2e"/>
+  <rect x="50" y="40" width="100" height="160" rx="8" fill="#6366f1" opacity="0.15" stroke="#6366f1" stroke-width="1"/>
+  <rect x="170" y="40" width="100" height="160" rx="8" fill="#8b5cf6" opacity="0.15" stroke="#8b5cf6" stroke-width="1"/>
+  <rect x="290" y="40" width="60" height="160" rx="8" fill="#06b6d4" opacity="0.15" stroke="#06b6d4" stroke-width="1"/>
+  <rect x="65" y="60" width="70" height="8" rx="4" fill="#6366f1" opacity="0.5"/>
+  <rect x="65" y="80" width="50" height="6" rx="3" fill="#a0a0b0" opacity="0.3"/>
+  <rect x="185" y="60" width="70" height="8" rx="4" fill="#8b5cf6" opacity="0.5"/>
+  <text x="200" y="230" text-anchor="middle" fill="#6366f1" font-family="system-ui" font-size="12" font-weight="600">Design System</text>
+</svg>

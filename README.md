@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jay Dixit — Personal Portfolio
+
+A premium, modern, fully responsive personal portfolio website built with **frontend-only** technologies.
+
+## Tech Stack
+
+- **HTML5** — Semantic markup
+- **CSS3** — Custom properties, Flexbox, Grid, Glassmorphism
+- **JavaScript (ES6+)** & **TypeScript**
+- **React.js** & **Next.js** (App Router, static frontend)
+- **Tailwind CSS** & **Bootstrap 5**
+- **Framer Motion** — Component animations
+- **GSAP** — Hero animations
+- **Three.js** — Particle background
+- **React Icons** — Icon library
+- **AOS** — Scroll reveal animations
+
+## Features
+
+- Dark/Light mode toggle
+- Custom cursor (desktop)
+- Scroll progress bar
+- Loading animation
+- Typing animation in hero
+- Animated skill bars & counters
+- Project filter & search
+- Certificate gallery
+- Testimonials carousel
+- Contact form (frontend validation only)
+- Fully responsive mobile-first design
+- SEO-friendly metadata
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/              # Next.js app router (layout, page, globals.css)
+├── components/
+│   ├── layout/       # Navbar, Footer, effects
+│   ├── sections/     # Hero, About, Experience, etc.
+│   └── ui/           # Reusable UI components
+├── data/             # Static portfolio content
+├── hooks/            # Custom React hooks
+├── providers/        # Theme & AOS providers
+└── types/            # TypeScript interfaces
+public/
+├── profile/          # Profile image
+├── projects/         # Project thumbnails
+├── certificates/     # Certificate badges
+├── avatars/          # Testimonial avatars
+└── resume/           # Resume placeholder
+```
 
-## Learn More
+## Notes
 
-To learn more about Next.js, take a look at the following resources:
+- **No backend** — All content is static. The contact form validates input client-side only.
+- Replace placeholder links, images, and resume with your actual content.
+- Update `src/data/portfolio.ts` to customize all sections.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
