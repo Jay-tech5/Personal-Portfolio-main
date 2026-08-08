@@ -13,8 +13,8 @@ import type {
 /** Personal info */
 export const personalInfo = {
   name: "Jay Dixit",
-  title: "Software Engineer",
-  roles: ["Software Engineer", "Java Developer", "Cloud & DevOps Enthusiast"],
+  title: "Data Engineer",
+  roles: ["Data Engineer", "Java Developer", "Cloud & DevOps Enthusiast"],
   email: "",
   phone: "",
   location: "India",
