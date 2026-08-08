@@ -22,31 +22,35 @@ export default function TypingAnimation({
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const current = texts[textIndex];
+    if (!texts || texts.length === 0) return;
+    const current = texts[textIndex % texts.length];
 
-    const timeout = setTimeout(
-      () => {
-        if (!isDeleting) {
-          if (charIndex < current.length) {
-            setDisplayText(current.slice(0, charIndex + 1));
-            setCharIndex((c) => c + 1);
-          } else {
-            setTimeout(() => setIsDeleting(true), pauseDuration);
-          }
-        } else {
-          if (charIndex > 0) {
-            setDisplayText(current.slice(0, charIndex - 1));
-            setCharIndex((c) => c - 1);
-          } else {
-            setIsDeleting(false);
-            setTextIndex((i) => (i + 1) % texts.length);
-          }
-        }
-      },
-      isDeleting ? speed / 2 : speed
-    );
+    let timer: NodeJS.Timeout;
 
-    return () => clearTimeout(timeout);
+    if (!isDeleting) {
+      if (charIndex < current.length) {
+        timer = setTimeout(() => {
+          setDisplayText(current.slice(0, charIndex + 1));
+          setCharIndex((c) => c + 1);
+        }, speed);
+      } else {
+        timer = setTimeout(() => {
+          setIsDeleting(true);
+        }, pauseDuration);
+      }
+    } else {
+      if (charIndex > 0) {
+        timer = setTimeout(() => {
+          setDisplayText(current.slice(0, charIndex - 1));
+          setCharIndex((c) => c - 1);
+        }, speed / 2);
+      } else {
+        setIsDeleting(false);
+        setTextIndex((i) => (i + 1) % texts.length);
+      }
+    }
+
+    return () => clearTimeout(timer);
   }, [charIndex, isDeleting, textIndex, texts, speed, pauseDuration]);
 
   return (

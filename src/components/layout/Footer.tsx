@@ -6,7 +6,6 @@ import {
   FiMail,
   FiHeart,
 } from "react-icons/fi";
-import BackToTop from "./BackToTop";
 
 const iconMap: Record<string, React.ReactNode> = {
   twitter: <FiTwitter size={20} />,
@@ -115,8 +114,6 @@ export default function Footer() {
           </p>
         </div>
       </div>
-
-      <BackToTop />
     </footer>
   );
 }

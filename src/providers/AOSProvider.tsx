@@ -10,8 +10,7 @@ export default function AOSProvider({ children }: { children: React.ReactNode })
       duration: 800,
       easing: "ease-out-cubic",
       once: true,
-      offset: 80,
-      disable: "phone",
+      offset: 60,
     });
   }, []);
 

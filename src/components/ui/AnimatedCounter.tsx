@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface AnimatedCounterProps {
   value: number;
@@ -18,6 +18,25 @@ export default function AnimatedCounter({
 }: AnimatedCounterProps) {
   const [count, setCount] = useState(0);
   const [started, setStarted] = useState(false);
+  const counterRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const el = counterRef.current;
+    if (!el || started) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStarted(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [started]);
 
   useEffect(() => {
     if (!started) return;
@@ -41,22 +60,7 @@ export default function AnimatedCounter({
   }, [started, value, duration]);
 
   return (
-    <span
-      className={className}
-      ref={(el) => {
-        if (!el || started) return;
-        const observer = new IntersectionObserver(
-          ([entry]) => {
-            if (entry.isIntersecting) {
-              setStarted(true);
-              observer.disconnect();
-            }
-          },
-          { threshold: 0.5 }
-        );
-        observer.observe(el);
-      }}
-    >
+    <span className={className} ref={counterRef}>
       {count}
       {suffix}
     </span>
