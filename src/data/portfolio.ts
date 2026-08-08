@@ -38,11 +38,7 @@ export const navLinks: NavLink[] = [
 ];
 
 /** Social links */
-export const socialLinks: SocialLink[] = [
-  { label: "GitHub", href: "https://github.com", icon: "github" },
-  { label: "LinkedIn", href: "https://linkedin.com", icon: "linkedin" },
-  { label: "Twitter", href: "https://twitter.com", icon: "twitter" },
-];
+export const socialLinks: SocialLink[] = [];
 
 /** Counter stats for hero/about */
 export const counterStats: CounterStat[] = [
@@ -148,7 +144,7 @@ export const projects: ProjectItem[] = [
     technologies: ["Python", "LangChain", "FAISS", "LLM APIs"],
     category: "AI / ML",
     liveUrl: "#",
-    githubUrl: "https://github.com",
+    githubUrl: "#",
   },
   {
     id: "proj-2",
@@ -159,7 +155,7 @@ export const projects: ProjectItem[] = [
     technologies: ["Python", "OpenAI Function Calling", "REST APIs"],
     category: "AI / ML",
     liveUrl: "#",
-    githubUrl: "https://github.com",
+    githubUrl: "#",
   },
   {
     id: "proj-3",
@@ -170,7 +166,7 @@ export const projects: ProjectItem[] = [
     technologies: ["Java", "OOP", "Algorithms", "Data Structures"],
     category: "Java",
     liveUrl: "#",
-    githubUrl: "https://github.com",
+    githubUrl: "#",
   },
   {
     id: "proj-4",
@@ -181,7 +177,7 @@ export const projects: ProjectItem[] = [
     technologies: ["React", "Node.js", "Express", "MongoDB", "JWT"],
     category: "Full Stack",
     liveUrl: "#",
-    githubUrl: "https://github.com",
+    githubUrl: "#",
   },
 ];
 

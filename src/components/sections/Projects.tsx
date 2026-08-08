@@ -152,16 +152,18 @@ export default function Projects() {
                         <FiExternalLink size={14} />
                         Live Demo
                       </a>
-                      <a
-                        href={project.githubUrl}
-                        className="btn-outline-glass btn-sm flex-grow-1 justify-content-center"
-                        target={project.githubUrl !== "#" ? "_blank" : undefined}
-                        rel={project.githubUrl !== "#" ? "noopener noreferrer" : undefined}
-                        aria-label={`GitHub repository for ${project.title}`}
-                      >
-                        <FiGithub size={14} />
-                        GitHub
-                      </a>
+                      {project.githubUrl && project.githubUrl !== "#" && (
+                        <a
+                          href={project.githubUrl}
+                          className="btn-outline-glass btn-sm flex-grow-1 justify-content-center"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`GitHub repository for ${project.title}`}
+                        >
+                          <FiGithub size={14} />
+                          GitHub
+                        </a>
+                      )}
                     </div>
                   </div>
                 </GlassCard>

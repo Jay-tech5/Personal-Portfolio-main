@@ -2,8 +2,6 @@
 
 import { navLinks, personalInfo, socialLinks } from "@/data/portfolio";
 import {
-  FiGithub,
-  FiLinkedin,
   FiTwitter,
   FiMail,
   FiHeart,
@@ -11,8 +9,6 @@ import {
 import BackToTop from "./BackToTop";
 
 const iconMap: Record<string, React.ReactNode> = {
-  github: <FiGithub size={20} />,
-  linkedin: <FiLinkedin size={20} />,
   twitter: <FiTwitter size={20} />,
   email: <FiMail size={20} />,
 };
