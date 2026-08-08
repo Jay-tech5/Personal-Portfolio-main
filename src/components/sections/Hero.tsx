@@ -5,14 +5,13 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { personalInfo } from "@/data/portfolio";
 import TypingAnimation from "@/components/ui/TypingAnimation";
-import { FiDownload, FiMail, FiCode, FiCloud } from "react-icons/fi";
+import { FiDownload, FiMail, FiCloud } from "react-icons/fi";
 import { RiJavaFill } from "react-icons/ri";
 
 /** Hero section with profile, typing animation, and CTAs */
 export default function Hero() {
 
   const badges = [
-    { icon: <FiCode size={14} />, label: "Software Engineer" },
     { icon: <RiJavaFill size={14} />, label: "Java Developer" },
     { icon: <FiCloud size={14} />, label: "Cloud & DevOps Enthusiast" },
   ];
