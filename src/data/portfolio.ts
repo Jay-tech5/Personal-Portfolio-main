@@ -106,28 +106,28 @@ export const education: EducationItem[] = [
 /** Skills with proficiency levels */
 export const skills: SkillItem[] = [
   // Frontend
-  { name: "HTML5", level: 95, icon: "html", category: "frontend" },
-  { name: "CSS3", level: 90, icon: "css", category: "frontend" },
-  { name: "JavaScript", level: 88, icon: "javascript", category: "frontend" },
-  { name: "TypeScript", level: 85, icon: "typescript", category: "frontend" },
-  { name: "React.js", level: 90, icon: "react", category: "frontend" },
-  { name: "Next.js", level: 85, icon: "nextjs", category: "frontend" },
-  { name: "Tailwind CSS", level: 92, icon: "tailwind", category: "frontend" },
-  { name: "Bootstrap", level: 88, icon: "bootstrap", category: "frontend" },
+  { name: "HTML5", level: 78, icon: "html", category: "frontend" },
+  { name: "CSS3", level: 72, icon: "css", category: "frontend" },
+  { name: "JavaScript", level: 81, icon: "javascript", category: "frontend" },
+  { name: "TypeScript", level: 68, icon: "typescript", category: "frontend" },
+  { name: "React.js", level: 75, icon: "react", category: "frontend" },
+  { name: "Next.js", level: 70, icon: "nextjs", category: "frontend" },
+  { name: "Tailwind CSS", level: 82, icon: "tailwind", category: "frontend" },
+  { name: "Bootstrap", level: 65, icon: "bootstrap", category: "frontend" },
 
   // Backend, Databases & APIs
-  { name: "Node.js", level: 85, icon: "nodejs", category: "backend" },
-  { name: "Express.js", level: 82, icon: "express", category: "backend" },
-  { name: "Spring Boot", level: 85, icon: "springboot", category: "backend" },
-  { name: "Java", level: 88, icon: "java", category: "backend" },
-  { name: "Python", level: 85, icon: "python", category: "backend" },
-  { name: "MongoDB", level: 85, icon: "mongodb", category: "backend" },
-  { name: "SQL", level: 88, icon: "sql", category: "backend" },
-  { name: "REST API", level: 90, icon: "restapi", category: "backend" },
+  { name: "Node.js", level: 77, icon: "nodejs", category: "backend" },
+  { name: "Express.js", level: 69, icon: "express", category: "backend" },
+  { name: "Spring Boot", level: 73, icon: "springboot", category: "backend" },
+  { name: "Java", level: 80, icon: "java", category: "backend" },
+  { name: "Python", level: 76, icon: "python", category: "backend" },
+  { name: "MongoDB", level: 71, icon: "mongodb", category: "backend" },
+  { name: "SQL", level: 74, icon: "sql", category: "backend" },
+  { name: "REST API", level: 79, icon: "restapi", category: "backend" },
 
   // Tools & Version Control
-  { name: "Git", level: 90, icon: "git", category: "tools" },
-  { name: "GitHub", level: 92, icon: "github", category: "tools" },
+  { name: "Git", level: 83, icon: "git", category: "tools" },
+  { name: "GitHub", level: 84, icon: "github", category: "tools" },
 ];
 
 /** Project categories for filtering */
