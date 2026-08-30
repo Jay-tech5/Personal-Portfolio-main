@@ -5,7 +5,7 @@ import Image from "next/image";
 import { certifications } from "@/data/portfolio";
 import SectionHeading from "@/components/ui/SectionHeading";
 import GlassCard from "@/components/ui/GlassCard";
-import { FiAward, FiExternalLink } from "react-icons/fi";
+import { FiAward } from "react-icons/fi";
 
 /** Certifications gallery with lightbox-style selection */
 export default function Certifications() {
@@ -101,15 +101,6 @@ export default function Certifications() {
                   <p className="text-[var(--accent-primary)] fw-medium mb-3">
                     {active.issuer}
                   </p>
-                  <a
-                    href={active.credentialUrl}
-                    className="btn-outline-glass btn-sm"
-                    target={active.credentialUrl !== "#" ? "_blank" : undefined}
-                    rel={active.credentialUrl !== "#" ? "noopener noreferrer" : undefined}
-                  >
-                    <FiExternalLink size={14} />
-                    View Credential
-                  </a>
                 </div>
               </div>
             </GlassCard>
