@@ -2,29 +2,26 @@
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
-import { projects, projectCategories } from "@/data/portfolio";
+import { projects } from "@/data/portfolio";
 import SectionHeading from "@/components/ui/SectionHeading";
 import GlassCard from "@/components/ui/GlassCard";
 import { FiExternalLink, FiGithub, FiSearch } from "react-icons/fi";
 
-/** Projects section with filter and search */
+/** Projects section with search */
 export default function Projects() {
-  const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredProjects = useMemo(() => {
     return projects.filter((project) => {
-      const matchesCategory =
-        activeCategory === "All" || project.category === activeCategory;
       const query = searchQuery.toLowerCase();
       const matchesSearch =
         !query ||
         project.title.toLowerCase().includes(query) ||
         project.description.toLowerCase().includes(query) ||
         project.technologies.some((t) => t.toLowerCase().includes(query));
-      return matchesCategory && matchesSearch;
+      return matchesSearch;
     });
-  }, [activeCategory, searchQuery]);
+  }, [searchQuery]);
 
   return (
     <section
@@ -39,27 +36,11 @@ export default function Projects() {
           description="A selection of projects showcasing my skills and experience."
         />
 
-        {/* Filter & Search controls */}
+        {/* Search controls */}
         <div
-          className="d-flex flex-column flex-md-row gap-3 mb-5 align-items-stretch align-items-md-center justify-content-between"
+          className="d-flex justify-content-center mb-5"
           data-aos="fade-up"
         >
-          <div className="d-flex flex-wrap gap-2">
-            {projectCategories.map((cat) => (
-              <button
-                key={cat}
-                type="button"
-                onClick={() => setActiveCategory(cat)}
-                className={`btn btn-sm rounded-pill px-3 py-2 border-0 fw-medium ${
-                  activeCategory === cat ? "btn-gradient" : "btn-outline-glass"
-                }`}
-                aria-pressed={activeCategory === cat}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
           <div className="position-relative" style={{ maxWidth: 320 }}>
             <FiSearch
               className="position-absolute top-50 translate-middle-y text-[var(--text-muted)]"
