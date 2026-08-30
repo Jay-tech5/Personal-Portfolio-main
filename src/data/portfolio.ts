@@ -41,12 +41,7 @@ export const navLinks: NavLink[] = [
 export const socialLinks: SocialLink[] = [];
 
 /** Counter stats for hero/about */
-export const counterStats: CounterStat[] = [
-  { label: "Projects Completed", value: 25, suffix: "+" },
-  { label: "Years Experience", value: 3, suffix: "+" },
-  { label: "Technologies", value: 15, suffix: "+" },
-  { label: "Happy Clients", value: 12, suffix: "+" },
-];
+export const counterStats: CounterStat[] = [];
 
 /** Work experience timeline */
 export const experiences: ExperienceItem[] = [
