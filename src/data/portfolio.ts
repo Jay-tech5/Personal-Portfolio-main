@@ -144,7 +144,7 @@ export const projects: ProjectItem[] = [
     technologies: ["Python", "LangChain", "FAISS", "LLM APIs"],
     category: "AI / ML",
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/Jay-tech5/Swift-Bites",
   },
   {
     id: "proj-2",
@@ -154,7 +154,7 @@ export const projects: ProjectItem[] = [
     image: "/projects/design-system.svg",
     technologies: ["Python", "OpenAI Function Calling", "REST APIs"],
     category: "AI / ML",
-    liveUrl: "#",
+    liveUrl: "https://smart-form-validator-main.vercel.app/",
     githubUrl: "#",
   },
   {
@@ -165,7 +165,7 @@ export const projects: ProjectItem[] = [
     image: "/projects/portfolio.svg",
     technologies: ["Java", "OOP", "Algorithms", "Data Structures"],
     category: "Java",
-    liveUrl: "#",
+    liveUrl: "https://to-do-list-five-omega-82.vercel.app/",
     githubUrl: "#",
   },
   {
