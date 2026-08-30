@@ -123,24 +123,6 @@ export default function Projects() {
                       {project.description}
                     </p>
 
-                    <div className="d-flex flex-wrap gap-2 mb-4">
-                      {project.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="badge rounded-pill px-2 py-1"
-                          style={{
-                            background: "var(--glass-bg)",
-                            border: "1px solid var(--glass-border)",
-                            color: "var(--text-secondary)",
-                            fontWeight: 500,
-                            fontSize: "0.7rem",
-                          }}
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-
                     <div className="d-flex gap-2">
                       <a
                         href={project.liveUrl}
