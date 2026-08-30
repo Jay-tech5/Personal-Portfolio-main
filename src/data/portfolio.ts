@@ -124,10 +124,6 @@ export const skills: SkillItem[] = [
   { name: "MongoDB", level: 71, icon: "mongodb", category: "backend" },
   { name: "SQL", level: 74, icon: "sql", category: "backend" },
   { name: "REST API", level: 79, icon: "restapi", category: "backend" },
-
-  // Tools & Version Control
-  { name: "Git", level: 83, icon: "git", category: "tools" },
-  { name: "GitHub", level: 84, icon: "github", category: "tools" },
 ];
 
 /** Project categories for filtering */
