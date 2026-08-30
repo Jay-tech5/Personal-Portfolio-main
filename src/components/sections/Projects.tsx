@@ -106,15 +106,6 @@ export default function Projects() {
                       className="object-fit-cover transition-transform"
                       style={{ transition: "transform 0.4s ease" }}
                     />
-                    <span
-                      className="position-absolute top-0 end-0 m-3 badge rounded-pill px-3 py-2"
-                      style={{
-                        background: "var(--gradient-primary)",
-                        fontSize: "0.7rem",
-                      }}
-                    >
-                      {project.category}
-                    </span>
                   </div>
 
                   <div className="p-4 d-flex flex-column flex-grow-1">
