@@ -13,15 +13,15 @@ import type {
 /** Personal info */
 export const personalInfo = {
   name: "Jay Dixit",
-  title: "Software Engineer",
-  roles: ["Software Engineer"],
+  title: "Data Engineer",
+  roles: ["Data Engineer"],
   email: "",
   phone: "",
   location: "India",
   resumeUrl: "/resume/jay-dixit-resume.html",
-  about: `I'm a passionate Software Engineer with a strong foundation in Java development and a growing expertise in modern frontend technologies. I love building scalable applications, exploring cloud infrastructure, and crafting intuitive user experiences.
+  about: `I'm a passionate Data Engineer with a strong foundation in data pipeline architecture and a growing expertise in modern data technologies. I love building scalable data solutions, exploring cloud infrastructure, and crafting efficient data workflows.
 
-With experience across the full development lifecycle, I bring together backend robustness and frontend elegance. I'm constantly learning new technologies and contributing to open-source projects.`,
+With experience across the full development lifecycle, I bring together data robustness and analytical elegance. I'm constantly learning new technologies and contributing to data-driven projects.`,
   tagline: "Building elegant solutions with code & cloud.",
 };
 
