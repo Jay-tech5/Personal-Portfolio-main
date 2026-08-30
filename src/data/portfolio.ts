@@ -143,7 +143,7 @@ export const projects: ProjectItem[] = [
     image: "/projects/blog.svg",
     technologies: ["Python", "LangChain", "FAISS", "LLM APIs"],
     category: "AI / ML",
-    liveUrl: "#",
+    liveUrl: "https://swift-bites-lovat.vercel.app/",
     githubUrl: "https://github.com/Jay-tech5/Swift-Bites",
   },
   {
