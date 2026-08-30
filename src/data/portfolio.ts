@@ -137,9 +137,9 @@ export const projectCategories = ["All", "AI / ML", "Full Stack", "Java"];
 export const projects: ProjectItem[] = [
   {
     id: "proj-1",
-    title: "RAG-Based Document Q&A System",
+    title: "Swift Bites",
     description:
-      "Retrieval-Augmented Generation pipeline using LangChain, FAISS, and LLM APIs for semantic document search and Q&A.",
+      "A modern food delivery application with real-time order tracking, seamless payment integration, and an intuitive user interface for browsing and ordering food.",
     image: "/projects/blog.svg",
     technologies: ["Python", "LangChain", "FAISS", "LLM APIs"],
     category: "AI / ML",
@@ -148,9 +148,9 @@ export const projects: ProjectItem[] = [
   },
   {
     id: "proj-2",
-    title: "AI Task Automation Agent",
+    title: "Smart-form validator",
     description:
-      "Autonomous agent for planning and executing multi-step tasks using OpenAI function calling and tool-selection logic.",
+      "An intelligent form validation library with real-time error handling, custom validation rules, and comprehensive user feedback mechanisms for web applications.",
     image: "/projects/design-system.svg",
     technologies: ["Python", "OpenAI Function Calling", "REST APIs"],
     category: "AI / ML",
@@ -159,9 +159,9 @@ export const projects: ProjectItem[] = [
   },
   {
     id: "proj-3",
-    title: "DSA Visualizer & Algorithm Playground",
+    title: "to-do list",
     description:
-      "Interactive visualization tool for data structures and algorithms using object-oriented Java design.",
+      "A comprehensive task management application that helps users organize, prioritize, and track their daily tasks with deadline notifications and category management.",
     image: "/projects/portfolio.svg",
     technologies: ["Java", "OOP", "Algorithms", "Data Structures"],
     category: "Java",
@@ -170,9 +170,9 @@ export const projects: ProjectItem[] = [
   },
   {
     id: "proj-4",
-    title: "Full-Stack Task Management Web App",
+    title: "expense tracker system",
     description:
-      "Full-stack CRUD application with RESTful APIs, JWT authentication, and responsive React frontend.",
+      "A full-featured expense tracking application with budgeting tools, spending analytics, expense categorization, and detailed financial reports for better money management.",
     image: "/projects/taskmanager.svg",
     technologies: ["React", "Node.js", "Express", "MongoDB", "JWT"],
     category: "Full Stack",
