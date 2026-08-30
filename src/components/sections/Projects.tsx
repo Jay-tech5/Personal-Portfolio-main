@@ -5,7 +5,7 @@ import Image from "next/image";
 import { projects } from "@/data/portfolio";
 import SectionHeading from "@/components/ui/SectionHeading";
 import GlassCard from "@/components/ui/GlassCard";
-import { FiExternalLink, FiGithub, FiSearch } from "react-icons/fi";
+import { FiExternalLink, FiSearch } from "react-icons/fi";
 
 /** Projects section with search */
 export default function Projects() {
@@ -104,20 +104,8 @@ export default function Projects() {
                         aria-label={`Live demo of ${project.title}`}
                       >
                         <FiExternalLink size={14} />
-                        Live Demo
+                        Live
                       </a>
-                      {project.githubUrl && project.githubUrl !== "#" && (
-                        <a
-                          href={project.githubUrl}
-                          className="btn-outline-glass btn-sm flex-grow-1 justify-content-center"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`GitHub repository for ${project.title}`}
-                        >
-                          <FiGithub size={14} />
-                          GitHub
-                        </a>
-                      )}
                     </div>
                   </div>
                 </GlassCard>

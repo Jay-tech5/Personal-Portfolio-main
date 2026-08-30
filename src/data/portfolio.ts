@@ -144,7 +144,7 @@ export const projects: ProjectItem[] = [
     technologies: ["Python", "LangChain", "FAISS", "LLM APIs"],
     category: "AI / ML",
     liveUrl: "https://swift-bites-lovat.vercel.app/",
-    githubUrl: "https://github.com/Jay-tech5/Swift-Bites",
+    githubUrl: "#",
   },
   {
     id: "proj-2",
