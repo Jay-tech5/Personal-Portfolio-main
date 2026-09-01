@@ -1,15 +1,12 @@
 "use client";
 
 import { navLinks, personalInfo, socialLinks } from "@/data/portfolio";
-import {
-  FiTwitter,
-  FiMail,
-  FiHeart,
-} from "react-icons/fi";
+import { FiTwitter, FiMail, FiHeart } from "react-icons/fi";
+import { useCallback, useMemo } from "react";
 
 const iconMap: Record<string, React.ReactNode> = {
-  twitter: <FiTwitter size={20} />,
-  email: <FiMail size={20} />,
+  twitter: <FiTwitter size={20} aria-hidden="true" />,
+  email: <FiMail size={20} aria-hidden="true" />,
 };
 
 /** Site footer with social links, quick nav, and copyright */
@@ -39,7 +36,7 @@ export default function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="d-flex align-items-center justify-content-center rounded-circle text-[var(--text-secondary)]"
+                  className="d-flex align-items-center justify-content-center rounded-circle text-[var(--text-secondary)] footer-social-link"
                   style={{
                     width: 40,
                     height: 40,
@@ -48,14 +45,6 @@ export default function Footer() {
                     transition: "all 0.3s ease",
                   }}
                   aria-label={link.label}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "var(--accent-primary)";
-                    e.currentTarget.style.color = "white";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "var(--glass-bg)";
-                    e.currentTarget.style.color = "";
-                  }}
                 >
                   {iconMap[link.icon]}
                 </a>

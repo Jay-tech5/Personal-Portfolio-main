@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import {
   SiHtml5,
   SiCss,
@@ -47,9 +48,14 @@ const iconMap: Record<string, React.ReactNode> = {
 
 /** Skills section with icon grid and animated bars */
 export default function Skills() {
-  const frontendSkills = skills.filter((s) => s.category === "frontend");
-  const backendSkills = skills.filter((s) => s.category === "backend");
-  const toolSkills = skills.filter((s) => s.category === "tools");
+  // Optimize filtering with useMemo to avoid recalculating on every render
+  const { frontendSkills, backendSkills, toolSkills } = useMemo(() => {
+    return {
+      frontendSkills: skills.filter((s) => s.category === "frontend"),
+      backendSkills: skills.filter((s) => s.category === "backend"),
+      toolSkills: skills.filter((s) => s.category === "tools"),
+    };
+  }, []);
 
   return (
     <section
@@ -70,19 +76,20 @@ export default function Skills() {
           className="row g-3 mb-5 justify-content-center"
           data-aos="fade-up"
         >
-          {skills.map((skill, i) => (
-            <div key={skill.name} className="col-4 col-sm-3 col-md-2">
-              <GlassCard
-                className="text-center py-3 px-2"
-                delay={i * 0.05}
-              >
-                <div className="mb-2 d-flex justify-content-center">
-                  {iconMap[skill.icon]}
-                </div>
-                <span className="small fw-medium">{skill.name}</span>
-              </GlassCard>
-            </div>
-          ))}
+          {skills.map((skill) => {
+            const icon = iconMap[skill.icon];
+            if (!icon) return null; // Prevent rendering if icon not found
+            return (
+              <div key={skill.name} className="col-4 col-sm-3 col-md-2">
+                <GlassCard className="text-center py-3 px-2">
+                  <div className="mb-2 d-flex justify-content-center">
+                    {icon}
+                  </div>
+                  <span className="small fw-medium">{skill.name}</span>
+                </GlassCard>
+              </div>
+            );
+          })}
         </div>
 
         {/* Animated skill bars */}
@@ -92,14 +99,17 @@ export default function Skills() {
               <h3 className="fs-6 fw-semibold mb-4 text-uppercase tracking-wider">
                 Frontend Development
               </h3>
-              {frontendSkills.map((skill, i) => (
-                <SkillBar
-                  key={skill.name}
-                  name={skill.name}
-                  level={skill.level}
-                  delay={i * 100}
-                />
-              ))}
+              {frontendSkills.map((skill, i) => {
+                const delay = i * 100;
+                return (
+                  <SkillBar
+                    key={skill.name}
+                    name={skill.name}
+                    level={skill.level}
+                    delay={delay}
+                  />
+                );
+              })}
             </GlassCard>
           </div>
           <div className="col-lg-4 col-md-6" data-aos="fade-up">

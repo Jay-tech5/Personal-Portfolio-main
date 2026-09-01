@@ -62,7 +62,7 @@ export default function About() {
             <div className="row g-3">
               {counterStats.map((stat, i) => (
                 <div key={stat.label} className="col-6" data-aos="zoom-in" data-aos-delay={i * 100}>
-                  <GlassCard className="text-center py-4" delay={i * 0.1}>
+                  <GlassCard className="text-center py-4">
                     <div className="display-6 fw-bold gradient-text mb-1">
                       <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                     </div>

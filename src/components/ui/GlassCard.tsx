@@ -1,18 +1,17 @@
 "use client";
 
+import { memo, ReactNode } from "react";
 import { motion } from "framer-motion";
-import type { ReactNode } from "react";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 interface GlassCardProps {
   children: ReactNode;
   className?: string;
   hover?: boolean;
-  delay?: number;
 }
 
 /** Glassmorphism card — hover only (AOS handles scroll reveals to avoid double animation) */
-export default function GlassCard({
+function GlassCardBase({
   children,
   className = "",
   hover = true,
@@ -34,3 +33,5 @@ export default function GlassCard({
     </motion.div>
   );
 }
+
+export default memo(GlassCardBase);

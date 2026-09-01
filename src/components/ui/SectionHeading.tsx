@@ -1,5 +1,6 @@
 "use client";
 
+import { memo } from "react";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 interface SectionHeadingProps {
@@ -10,7 +11,7 @@ interface SectionHeadingProps {
 }
 
 /** Reusable section heading with gradient accent */
-export default function SectionHeading({
+function SectionHeadingBase({
   subtitle,
   title,
   description,
@@ -39,3 +40,5 @@ export default function SectionHeading({
     </div>
   );
 }
+
+export default memo(SectionHeadingBase);

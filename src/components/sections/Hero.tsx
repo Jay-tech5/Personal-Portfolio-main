@@ -1,11 +1,11 @@
 "use client";
 
-
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { personalInfo } from "@/data/portfolio";
 import TypingAnimation from "@/components/ui/TypingAnimation";
 import { FiDownload, FiMail, FiCode } from "react-icons/fi";
+import { ANIMATION_DELAY, ANIMATION_DURATION } from "@/constants";
 
 /** Hero section with profile, typing animation, and CTAs */
 export default function Hero() {
@@ -157,24 +157,39 @@ export default function Hero() {
               </div>
 
               {/* Floating icons */}
-              {["⚡", "☁️", "💻"].map((icon, i) => (
-                <motion.span
-                  key={icon}
-                  className="position-absolute d-flex align-items-center justify-content-center rounded-circle glass-card fs-5"
-                  style={{
-                    width: 44,
-                    height: 44,
-                    top: i === 0 ? "5%" : i === 1 ? "60%" : "30%",
-                    left: i === 0 ? "-10%" : i === 1 ? "-15%" : "auto",
-                    right: i === 2 ? "-10%" : "auto",
-                  }}
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, delay: i * 0.5 }}
-                  aria-hidden="true"
-                >
-                  {icon}
-                </motion.span>
-              ))}
+              {[
+                { icon: "⚡", label: "Lightning bolt" },
+                { icon: "☁️", label: "Cloud" },
+                { icon: "💻", label: "Computer" },
+              ].map((item, i) => {
+                const delays = [
+                  ANIMATION_DELAY.FLOATING_ICON_1,
+                  ANIMATION_DELAY.FLOATING_ICON_2,
+                  ANIMATION_DELAY.FLOATING_ICON_3,
+                ];
+                return (
+                  <motion.span
+                    key={item.icon}
+                    className="position-absolute d-flex align-items-center justify-content-center rounded-circle glass-card fs-5"
+                    style={{
+                      width: 44,
+                      height: 44,
+                      top: i === 0 ? "5%" : i === 1 ? "60%" : "30%",
+                      left: i === 0 ? "-10%" : i === 1 ? "-15%" : "auto",
+                      right: i === 2 ? "-10%" : "auto",
+                    }}
+                    animate={{ y: [0, -8, 0] }}
+                    transition={{
+                      duration: ANIMATION_DURATION.FLOATING_ICON / 1000,
+                      repeat: Infinity,
+                      delay: delays[i] / 1000,
+                    }}
+                    aria-label={item.label}
+                  >
+                    {item.icon}
+                  </motion.span>
+                );
+              })}
             </motion.div>
           </div>
         </div>

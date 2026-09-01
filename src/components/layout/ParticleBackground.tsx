@@ -29,6 +29,7 @@ export default function ParticleBackground() {
     }> = [];
 
     const resize = () => {
+      if (!canvas) return;
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       initParticles();
@@ -54,6 +55,12 @@ export default function ParticleBackground() {
     resize();
 
     const draw = () => {
+      // Don't animate if page is hidden (user switched tabs)
+      if (document.hidden) {
+        animationId = requestAnimationFrame(draw);
+        return;
+      }
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       for (let i = 0; i < particles.length; i++) {

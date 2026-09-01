@@ -9,9 +9,31 @@ import { FiAward } from "react-icons/fi";
 
 /** Certifications gallery with lightbox-style selection */
 export default function Certifications() {
-  const [selected, setSelected] = useState(certifications[0].id);
+  const [selected, setSelected] = useState(
+    certifications.length > 0 ? certifications[0].id : undefined
+  );
 
   const active = certifications.find((c) => c.id === selected) ?? certifications[0];
+
+  if (!active) {
+    return (
+      <section
+        id="certifications"
+        className="section-padding"
+        style={{ background: "var(--bg-secondary)" }}
+        aria-labelledby="certifications-heading"
+      >
+        <div className="section-container">
+          <SectionHeading
+            subtitle="Certifications"
+            title="Credentials & Badges"
+            description="Professional certifications validating my expertise."
+          />
+          <p className="text-center text-[var(--text-muted)]">No certifications available.</p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section

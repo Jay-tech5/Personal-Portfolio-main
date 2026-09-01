@@ -33,7 +33,7 @@ export default function Experience() {
                 data-aos-delay={index * 100}
               >
                 <div className="col-md-6 px-md-4 mb-3 mb-md-0">
-                  <GlassCard delay={index * 0.1}>
+                  <GlassCard>
                     <div className="d-flex align-items-start gap-3 mb-3">
                       <div
                         className="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0"

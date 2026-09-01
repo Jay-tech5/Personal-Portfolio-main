@@ -6,6 +6,7 @@ import { navLinks, personalInfo } from "@/data/portfolio";
 import ThemeToggle from "./ThemeToggle";
 import { FiMenu, FiX } from "react-icons/fi";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { Z_INDEX, SCROLL_OFFSET_THRESHOLD, NAV_ACTIVE_SECTION_OFFSET } from "@/constants";
 
 /** Responsive sticky navigation with mobile hamburger menu */
 export default function Navbar() {
@@ -15,17 +16,22 @@ export default function Navbar() {
   const reducedMotion = useReducedMotion();
   const ticking = useRef(false);
 
+  // Cache sections array to avoid recreation on every scroll
+  const sectionsRef = useRef<string[]>([]);
+  useEffect(() => {
+    sectionsRef.current = navLinks.map((link) => link.href.replace("#", ""));
+  }, []);
+
   const handleScroll = useCallback(() => {
     if (ticking.current) return;
     ticking.current = true;
 
     requestAnimationFrame(() => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > SCROLL_OFFSET_THRESHOLD);
 
-      const sections = navLinks.map((link) => link.href.replace("#", ""));
-      for (const id of [...sections].reverse()) {
+      for (const id of sectionsRef.current.slice().reverse()) {
         const el = document.getElementById(id);
-        if (el && el.getBoundingClientRect().top <= 120) {
+        if (el && el.getBoundingClientRect().top <= NAV_ACTIVE_SECTION_OFFSET) {
           setActiveSection(id);
           break;
         }
@@ -50,7 +56,7 @@ export default function Navbar() {
   return (
     <header
       className="position-fixed top-0 start-0 w-100"
-      style={{ zIndex: 1000, height: "var(--nav-height)" }}
+      style={{ zIndex: Z_INDEX.NAVBAR, height: "var(--nav-height)" }}
       role="banner"
     >
       <nav
@@ -119,7 +125,7 @@ export default function Navbar() {
               top: "var(--nav-height)",
               height: "calc(100dvh - var(--nav-height))",
               background: "var(--bg-primary)",
-              zIndex: 999,
+              zIndex: Z_INDEX.NAVBAR_MOBILE_MENU,
               overflowY: "auto",
             }}
             initial={reducedMotion ? false : { opacity: 0, y: -8 }}

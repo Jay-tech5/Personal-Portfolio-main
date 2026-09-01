@@ -1,13 +1,20 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { DEBOUNCE_DELAY } from "@/constants";
 
-/** Tracks vertical scroll progress as a percentage (0–100) */
+/** Tracks vertical scroll progress as a percentage (0–100) with throttle */
 export function useScrollProgress() {
   const [progress, setProgress] = useState(0);
+  const lastUpdateRef = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
+      const now = Date.now();
+      // Throttle updates to 100ms to reduce state updates
+      if (now - lastUpdateRef.current < DEBOUNCE_DELAY.SCROLL) return;
+
+      lastUpdateRef.current = now;
       const scrollTop = window.scrollY;
       const docHeight =
         document.documentElement.scrollHeight - window.innerHeight;
@@ -16,7 +23,7 @@ export function useScrollProgress() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+    handleScroll(); // Initial call
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 

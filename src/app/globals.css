@@ -249,3 +249,30 @@ body {
   position: relative;
   z-index: 1;
 }
+
+/* Footer social links - touch/hover effect */
+.footer-social-link {
+  transition: all 0.3s ease;
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus-visible {
+  background: var(--accent-primary) !important;
+  color: white !important;
+  outline: none;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+  transform: translateY(-2px);
+}
+
+.footer-social-link:active {
+  transform: translateY(0);
+}
+
+/* Hover text accent utility */
+.hover-text-accent {
+  transition: color 0.2s ease;
+}
+
+.hover-text-accent:hover {
+  color: var(--accent-primary) !important;
+}

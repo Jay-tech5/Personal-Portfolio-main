@@ -12,6 +12,26 @@ import { FiChevronLeft, FiChevronRight, FiStar } from "react-icons/fi";
 export default function Testimonials() {
   const [current, setCurrent] = useState(0);
 
+  if (testimonials.length === 0) {
+    return (
+      <section
+        id="testimonials"
+        className="section-padding"
+        style={{ background: "var(--bg-secondary)" }}
+        aria-labelledby="testimonials-heading"
+      >
+        <div className="section-container">
+          <SectionHeading
+            subtitle="Testimonials"
+            title="What People Say"
+            description="Feedback from colleagues and clients I've worked with."
+          />
+          <p className="text-center text-[var(--text-muted)]">No testimonials available yet.</p>
+        </div>
+      </section>
+    );
+  }
+
   const prev = () =>
     setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1));
   const next = () =>

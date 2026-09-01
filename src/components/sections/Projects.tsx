@@ -82,8 +82,9 @@ export default function Projects() {
                   >
                     <Image
                       src={project.image}
-                      alt={`${project.title} preview`}
+                      alt={`${project.title} screenshot`}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-fit-cover transition-transform"
                       style={{ transition: "transform 0.4s ease" }}
                     />

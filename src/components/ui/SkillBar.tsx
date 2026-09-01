@@ -1,5 +1,6 @@
 "use client";
 
+import { memo } from "react";
 import { useInView } from "@/hooks/useScrollProgress";
 
 interface SkillBarProps {
@@ -9,7 +10,7 @@ interface SkillBarProps {
 }
 
 /** Animated horizontal skill proficiency bar */
-export default function SkillBar({ name, level, delay = 0 }: SkillBarProps) {
+function SkillBarBase({ name, level, delay = 0 }: SkillBarProps) {
   const { setRef, inView } = useInView(0.3);
 
   return (
@@ -39,3 +40,5 @@ export default function SkillBar({ name, level, delay = 0 }: SkillBarProps) {
     </div>
   );
 }
+
+export default memo(SkillBarBase);

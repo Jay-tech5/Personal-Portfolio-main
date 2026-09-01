@@ -2,13 +2,22 @@
 
 import { useEffect, useState } from "react";
 import { FiArrowUp } from "react-icons/fi";
+import { BACK_TO_TOP_THRESHOLD, Z_INDEX } from "@/constants";
 
 /** Floating back-to-top button */
 export default function BackToTop() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setVisible(window.scrollY > 400);
+    let ticking = false;
+    const handleScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setVisible(window.scrollY > BACK_TO_TOP_THRESHOLD);
+        ticking = false;
+      });
+    };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -31,7 +40,7 @@ export default function BackToTop() {
         height: 48,
         borderRadius: "50%",
         padding: 0,
-        zIndex: 1000,
+        zIndex: Z_INDEX.BACK_TO_TOP,
       }}
       aria-label="Back to top"
     >

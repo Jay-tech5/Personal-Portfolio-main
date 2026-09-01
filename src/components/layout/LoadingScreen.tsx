@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { personalInfo } from "@/data/portfolio";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { Z_INDEX, ANIMATION_DURATION } from "@/constants";
 
 /** Brief loading screen — dismisses when page is ready */
 export default function LoadingScreen() {
@@ -11,7 +12,7 @@ export default function LoadingScreen() {
   const reducedMotion = useReducedMotion();
 
   useEffect(() => {
-    const maxWait = reducedMotion ? 200 : 600;
+    const maxWait = reducedMotion ? ANIMATION_DURATION.FAST : ANIMATION_DURATION.SLOW;
 
     const finish = () => setLoading(false);
 
@@ -22,7 +23,7 @@ export default function LoadingScreen() {
 
     const onLoad = () => setTimeout(finish, maxWait);
     window.addEventListener("load", onLoad);
-    const fallback = setTimeout(finish, 1200);
+    const fallback = setTimeout(finish, ANIMATION_DURATION.LOADING_ITEM_3);
 
     return () => {
       window.removeEventListener("load", onLoad);
@@ -35,10 +36,10 @@ export default function LoadingScreen() {
       {loading && (
         <motion.div
           className="position-fixed top-0 start-0 w-100 h-100 d-flex flex-column align-items-center justify-content-center"
-          style={{ background: "var(--bg-primary)", zIndex: 10000 }}
+          style={{ background: "var(--bg-primary)", zIndex: Z_INDEX.LOADING_SCREEN }}
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: reducedMotion ? 0.1 : 0.35 }}
+          transition={{ duration: (reducedMotion ? ANIMATION_DURATION.FAST : ANIMATION_DURATION.SLOW) / 1000 }}
           aria-live="polite"
           aria-label="Loading portfolio"
         >

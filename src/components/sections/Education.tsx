@@ -28,7 +28,7 @@ export default function Education() {
               data-aos="fade-up"
               data-aos-delay={i * 150}
             >
-              <GlassCard className="h-100" delay={i * 0.1}>
+              <GlassCard className="h-100">
                 <div className="d-flex align-items-start gap-3">
                   <div
                     className="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0"
