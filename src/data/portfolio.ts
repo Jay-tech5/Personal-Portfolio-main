@@ -113,7 +113,6 @@ export const skills: SkillItem[] = [
   // Backend, Databases & APIs
   { name: "Node.js", level: 77, icon: "nodejs", category: "backend" },
   { name: "Express.js", level: 69, icon: "express", category: "backend" },
-  { name: "Spring Boot", level: 73, icon: "springboot", category: "backend" },
   { name: "Python", level: 76, icon: "python", category: "backend" },
   { name: "MongoDB", level: 71, icon: "mongodb", category: "backend" },
   { name: "SQL", level: 74, icon: "sql", category: "backend" },
