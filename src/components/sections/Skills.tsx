@@ -17,8 +17,10 @@ import {
   SiMongodb,
   SiGit,
   SiGithub,
+  SiApachespark,
+  SiApacheairflow,
 } from "react-icons/si";
-import { FaJava, FaDatabase } from "react-icons/fa6";
+import { FaCloud, FaDatabase } from "react-icons/fa6";
 import { TbApi } from "react-icons/tb";
 import { skills } from "@/data/portfolio";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -37,10 +39,13 @@ const iconMap: Record<string, React.ReactNode> = {
   nodejs: <SiNodedotjs size={28} color="#339933" />,
   express: <SiExpress size={28} />,
   springboot: <SiSpringboot size={28} color="#6DB33F" />,
-  java: <FaJava size={28} color="#5382A1" />,
   python: <SiPython size={28} color="#3776AB" />,
   mongodb: <SiMongodb size={28} color="#47A248" />,
   sql: <FaDatabase size={28} color="#00758F" />,
+  etl: <FaDatabase size={28} color="#F59E0B" />,
+  spark: <SiApachespark size={28} color="#E25A1C" />,
+  cloud: <FaCloud size={28} color="#3B82F6" />,
+  airflow: <SiApacheairflow size={28} color="#017CEE" />,
   restapi: <TbApi size={28} color="#6366F1" />,
   git: <SiGit size={28} color="#F05032" />,
   github: <SiGithub size={28} />,

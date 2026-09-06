@@ -114,10 +114,14 @@ export const skills: SkillItem[] = [
   { name: "Node.js", level: 77, icon: "nodejs", category: "backend" },
   { name: "Express.js", level: 69, icon: "express", category: "backend" },
   { name: "Spring Boot", level: 73, icon: "springboot", category: "backend" },
-  { name: "Java", level: 80, icon: "java", category: "backend" },
   { name: "Python", level: 76, icon: "python", category: "backend" },
   { name: "MongoDB", level: 71, icon: "mongodb", category: "backend" },
   { name: "SQL", level: 74, icon: "sql", category: "backend" },
+  { name: "ETL / ELT", level: 74, icon: "etl", category: "backend" },
+  { name: "Apache Spark / PySpark", level: 72, icon: "spark", category: "backend" },
+  { name: "Cloud (AWS / Azure / GCP)", level: 70, icon: "cloud", category: "backend" },
+  { name: "Data Warehousing & Data Modeling", level: 73, icon: "sql", category: "backend" },
+  { name: "Apache Airflow", level: 70, icon: "airflow", category: "backend" },
   { name: "REST API", level: 79, icon: "restapi", category: "backend" },
 ];
 
