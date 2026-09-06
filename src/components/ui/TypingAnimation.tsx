@@ -45,8 +45,10 @@ export default function TypingAnimation({
           setCharIndex((c) => c - 1);
         }, speed / 2);
       } else {
-        setIsDeleting(false);
-        setTextIndex((i) => (i + 1) % texts.length);
+        timer = setTimeout(() => {
+          setIsDeleting(false);
+          setTextIndex((i) => (i + 1) % texts.length);
+        }, speed);
       }
     }
 

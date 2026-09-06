@@ -2,7 +2,6 @@
 
 import { navLinks, personalInfo, socialLinks } from "@/data/portfolio";
 import { FiTwitter, FiMail, FiHeart } from "react-icons/fi";
-import { useCallback, useMemo } from "react";
 
 const iconMap: Record<string, React.ReactNode> = {
   twitter: <FiTwitter size={20} aria-hidden="true" />,
