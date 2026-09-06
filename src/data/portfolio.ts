@@ -34,7 +34,6 @@ export const navLinks: NavLink[] = [
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Certifications", href: "#certifications" },
-  { label: "Contact", href: "#contact" },
 ];
 
 /** Social links */

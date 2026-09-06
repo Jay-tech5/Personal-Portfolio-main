@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { personalInfo } from "@/data/portfolio";
 import TypingAnimation from "@/components/ui/TypingAnimation";
-import { FiDownload, FiMail } from "react-icons/fi";
+import { FiDownload } from "react-icons/fi";
 import { ANIMATION_DELAY, ANIMATION_DURATION } from "@/constants";
 
 /** Hero section with profile, typing animation, and CTAs */
@@ -68,10 +68,6 @@ export default function Hero() {
               <a href={personalInfo.resumeUrl} className="btn-gradient" download aria-label="Download resume">
                 <FiDownload size={18} />
                 Download Resume
-              </a>
-              <a href="#contact" className="btn-outline-glass">
-                <FiMail size={18} />
-                Contact Me
               </a>
             </motion.div>
           </div>

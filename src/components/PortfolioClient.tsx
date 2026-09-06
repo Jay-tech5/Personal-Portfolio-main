@@ -13,7 +13,6 @@ import Education from "@/components/sections/Education";
 import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Projects";
 import Certifications from "@/components/sections/Certifications";
-import Contact from "@/components/sections/Contact";
 import AOSProvider from "@/providers/AOSProvider";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 
@@ -36,7 +35,6 @@ export default function PortfolioClient() {
             <Skills />
             <Projects />
             <Certifications />
-            <Contact />
           </main>
           <Footer />
         </div>
