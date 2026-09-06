@@ -4,16 +4,11 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { personalInfo } from "@/data/portfolio";
 import TypingAnimation from "@/components/ui/TypingAnimation";
-import { FiDownload, FiMail, FiCode } from "react-icons/fi";
+import { FiDownload, FiMail } from "react-icons/fi";
 import { ANIMATION_DELAY, ANIMATION_DURATION } from "@/constants";
 
 /** Hero section with profile, typing animation, and CTAs */
 export default function Hero() {
-
-  const badges = [
-    { icon: <FiCode size={14} />, label: "Software Engineer" },
-  ];
-
   return (
     <section
       id="home"
@@ -62,41 +57,6 @@ export default function Hero() {
               {personalInfo.tagline} Passionate about building scalable applications
               and crafting exceptional user experiences.
             </motion.p>
-
-            {/* Role badges */}
-            <motion.div
-              className="d-flex flex-wrap gap-2 mb-5"
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: { opacity: 0 },
-                visible: {
-                  opacity: 1,
-                  transition: {
-                    staggerChildren: 0.1,
-                    delayChildren: 0.5,
-                  },
-                },
-              }}
-            >
-              {badges.map((badge) => (
-                <motion.span
-                  key={badge.label}
-                  className="hero-badge d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill small glass-card"
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                      transition: { duration: 0.6 },
-                    },
-                  }}
-                >
-                  {badge.icon}
-                  {badge.label}
-                </motion.span>
-              ))}
-            </motion.div>
 
             {/* CTA buttons */}
             <motion.div
