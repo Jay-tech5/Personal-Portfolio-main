@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import LoadingScreen from "@/components/layout/LoadingScreen";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -18,15 +19,20 @@ import { ThemeProvider } from "@/providers/ThemeProvider";
 
 /** Client-side wrapper assembling all portfolio sections and effects */
 export default function PortfolioClient() {
+  const [showLiveBackground, setShowLiveBackground] = useState(true);
+
   return (
     <ThemeProvider>
       <AOSProvider>
         <LoadingScreen />
         <ScrollProgressBar />
-        <ParticleBackground />
+        <ParticleBackground showLiveBackground={showLiveBackground} />
 
         <div id="main-content">
-          <Navbar />
+          <Navbar
+            showLiveBackground={showLiveBackground}
+            onToggleLiveBackground={() => setShowLiveBackground((prev) => !prev)}
+          />
           <main>
             <Hero />
             <About />

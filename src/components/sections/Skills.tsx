@@ -14,12 +14,12 @@ import {
   SiExpress,
   SiPython,
   SiMongodb,
-  SiGit,
-  SiGithub,
   SiApachespark,
   SiApacheairflow,
+  SiGit,
+  SiGithub,
 } from "react-icons/si";
-import { FaCloud, FaDatabase } from "react-icons/fa6";
+import { FaAws, FaCloud, FaDatabase, FaWarehouse } from "react-icons/fa6";
 import { TbApi } from "react-icons/tb";
 import { skills } from "@/data/portfolio";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -40,10 +40,12 @@ const iconMap: Record<string, React.ReactNode> = {
   python: <SiPython size={28} color="#3776AB" />,
   mongodb: <SiMongodb size={28} color="#47A248" />,
   sql: <FaDatabase size={28} color="#00758F" />,
-  etl: <FaDatabase size={28} color="#F59E0B" />,
+  etlelt: <FaDatabase size={28} color="#F59E0B" />,
+  aws: <FaAws size={28} color="#FF9900" />,
   spark: <SiApachespark size={28} color="#E25A1C" />,
   cloud: <FaCloud size={28} color="#3B82F6" />,
   airflow: <SiApacheairflow size={28} color="#017CEE" />,
+  datawarehouse: <FaWarehouse size={28} color="#4B5563" />,
   restapi: <TbApi size={28} color="#6366F1" />,
   git: <SiGit size={28} color="#F05032" />,
   github: <SiGithub size={28} />,
@@ -52,11 +54,10 @@ const iconMap: Record<string, React.ReactNode> = {
 /** Skills section with icon grid and animated bars */
 export default function Skills() {
   // Optimize filtering with useMemo to avoid recalculating on every render
-  const { frontendSkills, backendSkills, toolSkills } = useMemo(() => {
+  const { frontendSkills, backendSkills } = useMemo(() => {
     return {
       frontendSkills: skills.filter((s) => s.category === "frontend"),
       backendSkills: skills.filter((s) => s.category === "backend"),
-      toolSkills: skills.filter((s) => s.category === "tools"),
     };
   }, []);
 
@@ -97,7 +98,7 @@ export default function Skills() {
 
         {/* Animated skill bars */}
         <div className="row g-4">
-          <div className="col-lg-4 col-md-6" data-aos="fade-right">
+          <div className="col-lg-6 col-md-6" data-aos="fade-right">
             <GlassCard hover={false}>
               <h3 className="fs-6 fw-semibold mb-4 text-uppercase tracking-wider">
                 Frontend Development
@@ -115,27 +116,12 @@ export default function Skills() {
               })}
             </GlassCard>
           </div>
-          <div className="col-lg-4 col-md-6" data-aos="fade-up">
+          <div className="col-lg-6 col-md-6" data-aos="fade-up">
             <GlassCard hover={false}>
               <h3 className="fs-6 fw-semibold mb-4 text-uppercase tracking-wider">
                 Backend, Databases & APIs
               </h3>
               {backendSkills.map((skill, i) => (
-                <SkillBar
-                  key={skill.name}
-                  name={skill.name}
-                  level={skill.level}
-                  delay={i * 100}
-                />
-              ))}
-            </GlassCard>
-          </div>
-          <div className="col-lg-4 col-md-6" data-aos="fade-left">
-            <GlassCard hover={false}>
-              <h3 className="fs-6 fw-semibold mb-4 text-uppercase tracking-wider">
-                Tools & Platforms
-              </h3>
-              {toolSkills.map((skill, i) => (
                 <SkillBar
                   key={skill.name}
                   name={skill.name}

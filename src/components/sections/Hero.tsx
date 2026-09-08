@@ -17,53 +17,52 @@ export default function Hero() {
     >
       <div className="section-container">
         <div className="row align-items-center g-5">
-          {/* Text content */}
-          <div className="col-lg-7 order-2 order-lg-1">
+          <div className="col-lg-7 order-2 order-lg-1 hero-copy">
             <motion.p
-              className="text-[var(--accent-primary)] fw-semibold mb-2 small text-uppercase tracking-widest"
-              initial={{ opacity: 0, x: -20 }}
+              className="fw-normal mb-2 small text-uppercase tracking-widest"
+              style={{ color: "var(--text-secondary)", textShadow: "0 2px 18px rgba(15, 23, 42, 0.5)" }}
+              initial={{ opacity: 0, x: -15 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
             >
               Hello, I&apos;m
             </motion.p>
 
             <motion.h1
               id="hero-heading"
-              className="display-3 fw-bold mb-3"
-              initial={{ opacity: 0, y: 30 }}
+              className="display-3 fw-normal mb-3"
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              transition={{ duration: 0.4, delay: 0.08, ease: "easeOut" }}
             >
               <span className="gradient-text">{personalInfo.name}</span>
             </motion.h1>
 
             <motion.div
-              className="fs-4 text-[var(--text-secondary)] mb-4"
+              className="fs-4 mb-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
+              transition={{ duration: 0.35, delay: 0.15, ease: "easeOut" }}
             >
               <TypingAnimation texts={personalInfo.roles} className="fw-medium" />
             </motion.div>
 
             <motion.p
-              className="text-[var(--text-secondary)] mb-4 lead"
-              style={{ maxWidth: 520 }}
-              initial={{ opacity: 0, y: 20 }}
+              className="mb-4 lead text-(--text-secondary)"
+              style={{ maxWidth: 540, textShadow: "0 2px 18px rgba(15, 23, 42, 0.45)" }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
+              transition={{ duration: 0.4, delay: 0.22, ease: "easeOut" }}
             >
-              {personalInfo.tagline} Passionate about building scalable applications
-              and crafting exceptional user experiences.
+              {personalInfo.tagline} Focused on high-throughput ETL workflows, big data analytics, and cloud engineering.
             </motion.p>
 
             {/* CTA buttons */}
             <motion.div
               className="d-flex flex-wrap gap-3"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
+              transition={{ duration: 0.4, delay: 0.28, ease: "easeOut" }}
             >
               <a href={personalInfo.resumeUrl} className="btn-gradient" download aria-label="Download resume">
                 <FiDownload size={18} />
@@ -72,19 +71,21 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Profile photo */}
           <div className="col-lg-5 order-1 order-lg-2 d-flex justify-content-center">
             <motion.div
               className="position-relative animate-float"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
+              transition={{ duration: 1.6, delay: 0.25, ease: "easeOut" }}
             >
               <div
-                className="position-absolute top-50 start-50 translate-middle rounded-circle animate-pulse-glow"
+                className="position-absolute rounded-circle animate-pulse-glow"
                 style={{
+                  top: "50%",
+                  left: "50%",
                   width: "110%",
                   height: "110%",
+                  transform: "translate(-50%, -50%)",
                   background: "var(--gradient-primary)",
                   filter: "blur(30px)",
                 }}
@@ -103,7 +104,7 @@ export default function Hero() {
                 }}
               >
                 <Image
-                  src="/profile/profile.png"
+                  src="/profile/profile-sky.png"
                   alt={`${personalInfo.name} profile photo`}
                   width={280}
                   height={280}
@@ -112,7 +113,6 @@ export default function Hero() {
                 />
               </div>
 
-              {/* Floating icons */}
               {[
                 { icon: "⚡", label: "Lightning bolt" },
                 { icon: "☁️", label: "Cloud" },

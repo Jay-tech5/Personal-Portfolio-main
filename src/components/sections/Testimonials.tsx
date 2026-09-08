@@ -26,7 +26,7 @@ export default function Testimonials() {
             title="What People Say"
             description="Feedback from colleagues and clients I've worked with."
           />
-          <p className="text-center text-[var(--text-muted)]">No testimonials available yet.</p>
+          <p className="text-center text-(--text-muted)">No testimonials available yet.</p>
         </div>
       </section>
     );
@@ -78,7 +78,7 @@ export default function Testimonials() {
                   </div>
 
                   <blockquote className="mb-4">
-                    <p className="fs-5 fst-italic text-[var(--text-secondary)] leading-relaxed mb-0">
+                    <p className="fs-5 fst-italic leading-relaxed mb-0 text-(--text-secondary)">
                       &ldquo;{active.content}&rdquo;
                     </p>
                   </blockquote>
@@ -93,7 +93,7 @@ export default function Testimonials() {
                     />
                     <div className="text-start">
                       <p className="fw-bold mb-0">{active.name}</p>
-                      <p className="text-[var(--text-muted)] small mb-0">
+                      <p className="small mb-0 text-(--text-muted)">
                         {active.role}, {active.company}
                       </p>
                     </div>

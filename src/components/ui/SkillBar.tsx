@@ -17,7 +17,7 @@ function SkillBarBase({ name, level, delay = 0 }: SkillBarProps) {
     <div className="mb-5" ref={setRef}>
       <div className="flex justify-between mb-2">
         <span className="text-sm font-medium">{name}</span>
-        <span className="text-sm text-[var(--text-muted)]">{level}%</span>
+        <span className="text-sm text-(--text-muted)">{level}%</span>
       </div>
       <div
         className="h-2 rounded-full overflow-hidden"

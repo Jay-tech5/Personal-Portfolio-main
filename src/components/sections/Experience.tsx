@@ -22,8 +22,6 @@ export default function Experience() {
         />
 
         <div className="position-relative">
-          <div className="timeline-line d-none d-md-block" aria-hidden="true" />
-
           <div className="d-flex flex-column gap-4">
             {experiences.map((exp, index) => (
               <div
@@ -48,12 +46,12 @@ export default function Experience() {
                       </div>
                       <div>
                         <h3 className="fs-5 fw-bold mb-1">{exp.role}</h3>
-                        <p className="text-[var(--accent-primary)] fw-semibold mb-1">
+                        <p className="fw-semibold mb-1 text-(--accent-primary)">
                           {exp.company}
                         </p>
-                        <p className="text-[var(--text-muted)] small mb-0">{exp.duration}</p>
+                        <p className="small mb-0 text-(--text-muted)">{exp.duration}</p>
                         {exp.location && (
-                          <p className="text-[var(--text-muted)] small d-flex align-items-center gap-1 mt-1 mb-0">
+                          <p className="small d-flex align-items-center gap-1 mt-1 mb-0 text-(--text-muted)">
                             <FiMapPin size={12} />
                             {exp.location}
                           </p>
@@ -65,7 +63,7 @@ export default function Experience() {
                       {exp.responsibilities.map((item, i) => (
                         <li
                           key={`${exp.id}-resp-${i}`}
-                          className="text-[var(--text-secondary)] small mb-2"
+                          className="small mb-2 text-(--text-secondary)"
                         >
                           {item}
                         </li>

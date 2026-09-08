@@ -19,18 +19,13 @@ export function useReducedMotion() {
   return reduced;
 }
 
-/** True on touch-first or narrow viewports where heavy effects should be off */
+/** True on narrow viewports where the landing video should stay off */
 export function useLiteMode() {
-  const [lite, setLite] = useState(true);
+  const [lite, setLite] = useState(false);
 
   useEffect(() => {
     const update = () => {
-      const touch =
-        "ontouchstart" in window ||
-        navigator.maxTouchPoints > 0 ||
-        window.matchMedia("(pointer: coarse)").matches;
-      const narrow = window.innerWidth < 768;
-      setLite(touch || narrow);
+      setLite(window.innerWidth < 768);
     };
 
     update();

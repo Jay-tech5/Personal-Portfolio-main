@@ -58,7 +58,7 @@ export default function TypingAnimation({
   return (
     <span className={className} aria-live="polite">
       {displayText}
-      <span className="animate-pulse text-[var(--accent-primary)]" aria-hidden="true">
+      <span className="animate-pulse text-(--accent-primary)" aria-hidden="true">
         |
       </span>
     </span>

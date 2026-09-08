@@ -19,10 +19,10 @@ export const personalInfo = {
   phone: "",
   location: "India",
   resumeUrl: "/resume/jay-dixit-resume.html",
-  about: `I'm a passionate Data Engineer with a strong foundation in data pipeline architecture and a growing expertise in modern data technologies. I love building scalable data solutions, exploring cloud infrastructure, and crafting efficient data workflows.
+  about: `I am a Data Engineer at Deloitte focused on building scalable data pipelines, optimizing storage architecture, and executing high-performance ETL workflows.
 
-With experience across the full development lifecycle, I bring together data robustness and analytical elegance. I'm constantly learning new technologies and contributing to data-driven projects.`,
-  tagline: "Building elegant solutions with code & cloud.",
+Passionate about cloud infrastructure, modern data platforms, and analytical engineering, I bridge the gap between complex data systems and enterprise business value.`,
+  tagline: "Designing scalable data pipelines & enterprise cloud solutions.",
 };
 
 /** Navigation links */
@@ -40,7 +40,11 @@ export const navLinks: NavLink[] = [
 export const socialLinks: SocialLink[] = [];
 
 /** Counter stats for hero/about */
-export const counterStats: CounterStat[] = [];
+export const counterStats: CounterStat[] = [
+  { label: "Data Pipelines Built", value: 12, suffix: "+" },
+  { label: "Projects Completed", value: 15, suffix: "+" },
+  { label: "Certifications", value: 4, suffix: "" },
+];
 
 /** Work experience timeline */
 export const experiences: ExperienceItem[] = [
@@ -115,50 +119,51 @@ export const skills: SkillItem[] = [
   { name: "Python", level: 76, icon: "python", category: "backend" },
   { name: "MongoDB", level: 71, icon: "mongodb", category: "backend" },
   { name: "SQL", level: 74, icon: "sql", category: "backend" },
-  { name: "ETL / ELT", level: 74, icon: "etl", category: "backend" },
-  { name: "Apache Spark / PySpark", level: 72, icon: "spark", category: "backend" },
+  { name: "ETL/ELT", level: 82, icon: "etlelt", category: "backend" },
+  { name: "AWS", level: 78, icon: "aws", category: "backend" },
+  { name: "Apache Spark", level: 75, icon: "spark", category: "backend" },
+  { name: "Data Warehousing", level: 80, icon: "datawarehouse", category: "backend" },
   { name: "Cloud (AWS / Azure / GCP)", level: 70, icon: "cloud", category: "backend" },
-  { name: "Data Warehousing & Data Modeling", level: 73, icon: "sql", category: "backend" },
   { name: "Apache Airflow", level: 70, icon: "airflow", category: "backend" },
   { name: "REST API", level: 79, icon: "restapi", category: "backend" },
 ];
 
 /** Project categories for filtering */
-export const projectCategories = ["All", "AI / ML", "Full Stack", "Java"];
+export const projectCategories = ["All", "Data Analytics", "Data Engineering", "Full Stack"];
 
 /** Projects portfolio */
 export const projects: ProjectItem[] = [
   {
     id: "proj-1",
-    title: "Swift Bites",
+    title: "Sales & Business Performance Dashboard",
     description:
-      "A modern food delivery application with real-time order tracking, seamless payment integration, and an intuitive user interface for browsing and ordering food.",
+      "Interactive Power BI dashboard analyzing sales and regional performance across 5,000+ records, reducing manual reporting time by 40%.",
     image: "/projects/blog.svg",
-    technologies: ["Python", "LangChain", "FAISS", "LLM APIs"],
-    category: "AI / ML",
-    liveUrl: "https://swift-bites-lovat.vercel.app/",
+    technologies: ["SQL", "Power BI", "Excel"],
+    category: "Data Analytics",
+    liveUrl: "#",
     githubUrl: "#",
   },
   {
     id: "proj-2",
-    title: "Smart-form validator",
+    title: "Customer Churn Analysis",
     description:
-      "An intelligent form validation library with real-time error handling, custom validation rules, and comprehensive user feedback mechanisms for web applications.",
+      "Python-based churn analysis using Pandas and visualizations to identify customer behavior trends and support retention recommendations.",
     image: "/projects/design-system.svg",
-    technologies: ["Python", "OpenAI Function Calling", "REST APIs"],
-    category: "AI / ML",
-    liveUrl: "https://smart-form-validator-main.vercel.app/",
+    technologies: ["Python", "Pandas", "Matplotlib", "Seaborn"],
+    category: "Data Analytics",
+    liveUrl: "#",
     githubUrl: "#",
   },
   {
     id: "proj-3",
-    title: "to-do list",
+    title: "Excel-Based Financial Reporting Automation",
     description:
-      "A comprehensive task management application that helps users organize, prioritize, and track their daily tasks with deadline notifications and category management.",
+      "Automated financial reports with Excel VBA, PivotTables, and SQL, cutting manual effort by 50% and reducing reporting errors.",
     image: "/projects/portfolio.svg",
-    technologies: ["Java", "OOP", "Algorithms", "Data Structures"],
-    category: "Java",
-    liveUrl: "https://to-do-list-five-omega-82.vercel.app/",
+    technologies: ["Excel", "VBA", "PivotTables", "SQL"],
+    category: "Data Engineering",
+    liveUrl: "#",
     githubUrl: "#",
   },
   {
@@ -212,36 +217,4 @@ export const certifications: CertificationItem[] = [
 
 
 
-/** Testimonials */
-export const testimonials: TestimonialItem[] = [
-  {
-    id: "test-1",
-    name: "Sarah Johnson",
-    role: "Engineering Manager",
-    company: "Tech Solutions",
-    content:
-      "Jay is an exceptional developer who consistently delivers high-quality work. His attention to detail and problem-solving skills are outstanding.",
-    avatar: "/avatars/avatar-1.svg",
-    rating: 5,
-  },
-  {
-    id: "test-2",
-    name: "Michael Chen",
-    role: "Senior Developer",
-    company: "Innovate Digital",
-    content:
-      "Working with Jay was a pleasure. He quickly grasped complex requirements and implemented elegant solutions. Highly recommended!",
-    avatar: "/avatars/avatar-2.svg",
-    rating: 5,
-  },
-  {
-    id: "test-3",
-    name: "Emily Rodriguez",
-    role: "Product Manager",
-    company: "StartUp Hub",
-    content:
-      "Jay's ability to bridge frontend and backend development made him invaluable to our team. Great communicator and team player.",
-    avatar: "/avatars/avatar-3.svg",
-    rating: 5,
-  },
-];
+export const testimonials: TestimonialItem[] = [];

@@ -4,12 +4,17 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { navLinks, personalInfo } from "@/data/portfolio";
 import ThemeToggle from "./ThemeToggle";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX, FiPlay, FiPause } from "react-icons/fi";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { Z_INDEX, SCROLL_OFFSET_THRESHOLD, NAV_ACTIVE_SECTION_OFFSET } from "@/constants";
 
+interface NavbarProps {
+  showLiveBackground: boolean;
+  onToggleLiveBackground: () => void;
+}
+
 /** Responsive sticky navigation with mobile hamburger menu */
-export default function Navbar() {
+export default function Navbar({ showLiveBackground, onToggleLiveBackground }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
@@ -62,10 +67,10 @@ export default function Navbar() {
       <nav
         className="h-100 d-flex align-items-center"
         style={{
-          background: scrolled ? "var(--glass-bg)" : "transparent",
-          backdropFilter: scrolled ? "blur(12px)" : "none",
-          WebkitBackdropFilter: scrolled ? "blur(12px)" : "none",
-          borderBottom: scrolled ? "1px solid var(--glass-border)" : "1px solid transparent",
+          background: scrolled ? "var(--nav-bg-scrolled)" : "var(--nav-bg)",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
+          borderBottom: "1px solid var(--glass-border)",
           transition: "background 0.3s ease, border-color 0.3s ease",
         }}
         aria-label="Main navigation"
@@ -77,7 +82,7 @@ export default function Navbar() {
             aria-label={`${personalInfo.name} - Home`}
             onClick={() => setMenuOpen(false)}
           >
-            JD<span className="text-[var(--accent-primary)]">.</span>
+            JD<span className="text-(--accent-primary)">.</span>
           </a>
 
           <ul className="d-none d-lg-flex list-unstyled mb-0 gap-1 align-items-center">
@@ -100,6 +105,17 @@ export default function Navbar() {
           </ul>
 
           <div className="d-flex align-items-center gap-3">
+            <button
+              type="button"
+              onClick={onToggleLiveBackground}
+              className="p-2 rounded-full glass-card border-0 d-flex align-items-center justify-content-center text-(--text-primary)"
+              style={{ width: 40, height: 40, background: "var(--glass-bg)" }}
+              aria-label={showLiveBackground ? "Hide live background" : "Show live background"}
+              title={showLiveBackground ? "Hide live background" : "Show live background"}
+            >
+              {showLiveBackground ? <FiPause size={16} /> : <FiPlay size={16} />}
+            </button>
+
             <ThemeToggle />
 
             <button
@@ -139,7 +155,7 @@ export default function Navbar() {
                   <a
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className="d-block py-3 fs-5 text-decoration-none text-[var(--text-primary)] border-bottom mobile-nav-link"
+                    className="d-block py-3 fs-5 text-decoration-none text-(--text-primary) border-bottom mobile-nav-link"
                   >
                     {link.label}
                   </a>

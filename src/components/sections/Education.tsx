@@ -43,15 +43,15 @@ export default function Education() {
                   </div>
                   <div>
                     <h3 className="fs-5 fw-bold mb-2">{edu.degree}</h3>
-                    <p className="text-[var(--accent-primary)] fw-medium mb-2">
+                    <p className="fw-medium mb-2 text-(--accent-primary)">
                       {edu.university}
                     </p>
-                    <p className="text-[var(--text-muted)] small d-flex align-items-center gap-2 mb-2">
+                    <p className="small d-flex align-items-center gap-2 mb-2 text-(--text-muted)">
                       <FiCalendar size={14} />
                       {edu.year}
                     </p>
                     {edu.description && (
-                      <p className="text-[var(--text-secondary)] small mb-0">
+                      <p className="small mb-0 text-(--text-secondary)">
                         {edu.description}
                       </p>
                     )}

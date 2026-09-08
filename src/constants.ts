@@ -26,7 +26,7 @@ export const ANIMATION_DURATION = {
   LOADING_ITEM_2: 600,
   LOADING_ITEM_3: 1200,
   SPINNER: 100,
-  FLOATING_ICON: 3000, // Loop duration
+  FLOATING_ICON: 5200, // Loop duration
   TYPING: 50, // Per character
 } as const;
 

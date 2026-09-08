@@ -25,31 +25,31 @@ export default function About() {
         <div className="row g-4 g-lg-5 align-items-center">
           <div className="col-lg-7">
             <GlassCard hover={false}>
-              <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
+              <p className="leading-relaxed mb-4 text-(--text-secondary)">
                 {personalInfo.about.split("\n\n")[0]}
               </p>
-              <p className="text-[var(--text-secondary)] leading-relaxed mb-0">
+              <p className="leading-relaxed mb-0 text-(--text-secondary)">
                 {personalInfo.about.split("\n\n")[1]}
               </p>
 
               <div className="mt-4 pt-4 border-top d-flex flex-column gap-2" style={{ borderColor: "var(--glass-border)" }}>
                 {personalInfo.location && (
-                  <div className="d-flex align-items-center gap-3 text-[var(--text-secondary)] small">
-                    <FiMapPin className="text-[var(--accent-primary)]" />
+                  <div className="d-flex align-items-center gap-3 small text-(--text-secondary)">
+                    <FiMapPin className="text-(--accent-primary)" />
                     {personalInfo.location}
                   </div>
                 )}
                 {personalInfo.email && (
-                  <div className="d-flex align-items-center gap-3 text-[var(--text-secondary)] small">
-                    <FiMail className="text-[var(--accent-primary)]" />
-                    <a href={`mailto:${personalInfo.email}`} className="text-decoration-none text-[var(--text-secondary)]">
+                  <div className="d-flex align-items-center gap-3 small text-(--text-secondary)">
+                    <FiMail className="text-(--accent-primary)" />
+                    <a href={`mailto:${personalInfo.email}`} className="text-decoration-none text-(--text-secondary)">
                       {personalInfo.email}
                     </a>
                   </div>
                 )}
                 {personalInfo.phone && (
-                  <div className="d-flex align-items-center gap-3 text-[var(--text-secondary)] small">
-                    <FiPhone className="text-[var(--accent-primary)]" />
+                  <div className="d-flex align-items-center gap-3 small text-(--text-secondary)">
+                    <FiPhone className="text-(--accent-primary)" />
                     {personalInfo.phone}
                   </div>
                 )}
@@ -58,20 +58,27 @@ export default function About() {
           </div>
 
           {/* Animated counters */}
-          <div className="col-lg-5">
-            <div className="row g-3">
-              {counterStats.map((stat, i) => (
-                <div key={stat.label} className="col-6" data-aos="zoom-in" data-aos-delay={i * 100}>
-                  <GlassCard className="text-center py-4">
-                    <div className="display-6 fw-bold gradient-text mb-1">
-                      <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-                    </div>
-                    <p className="text-[var(--text-muted)] small mb-0">{stat.label}</p>
-                  </GlassCard>
-                </div>
-              ))}
+          {counterStats.length > 0 && (
+            <div className="col-lg-5">
+              <div className="row g-3">
+                {counterStats.map((stat, i) => (
+                  <div
+                    key={stat.label}
+                    className={counterStats.length === 3 ? "col-12 col-sm-4 col-lg-12" : "col-6"}
+                    data-aos="zoom-in"
+                    data-aos-delay={i * 100}
+                  >
+                    <GlassCard className="text-center py-3 px-3">
+                      <div className="fs-3 fw-bold gradient-text mb-1">
+                        <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                      </div>
+                      <p className="small mb-0 fw-medium text-(--text-muted)">{stat.label}</p>
+                    </GlassCard>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </section>

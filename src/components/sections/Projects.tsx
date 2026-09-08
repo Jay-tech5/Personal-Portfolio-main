@@ -43,7 +43,7 @@ export default function Projects() {
         >
           <div className="position-relative" style={{ maxWidth: 320 }}>
             <FiSearch
-              className="position-absolute top-50 translate-middle-y text-[var(--text-muted)]"
+              className="position-absolute top-50 translate-middle-y text-(--text-muted)"
               style={{ left: 14 }}
               size={16}
               aria-hidden="true"
@@ -63,7 +63,7 @@ export default function Projects() {
         <div className="row g-4">
           {filteredProjects.length === 0 ? (
             <div className="col-12 text-center py-5">
-              <p className="text-[var(--text-muted)]">
+              <p className="text-(--text-muted)">
                 No projects found matching your criteria.
               </p>
             </div>
@@ -92,7 +92,7 @@ export default function Projects() {
 
                   <div className="p-4 d-flex flex-column flex-grow-1">
                     <h3 className="fs-5 fw-bold mb-2">{project.title}</h3>
-                    <p className="text-[var(--text-secondary)] small mb-3 flex-grow-1">
+                    <p className="small mb-3 flex-grow-1 text-(--text-secondary)">
                       {project.description}
                     </p>
 

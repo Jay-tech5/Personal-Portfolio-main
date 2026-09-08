@@ -29,7 +29,7 @@ export default function Certifications() {
             title="Credentials & Badges"
             description="Professional certifications validating my expertise."
           />
-          <p className="text-center text-[var(--text-muted)]">No certifications available.</p>
+          <p className="text-center text-(--text-muted)">No certifications available.</p>
         </div>
       </section>
     );
@@ -116,11 +116,11 @@ export default function Certifications() {
                 </div>
                 <div className="flex-grow-1 text-center text-sm-start">
                   <div className="d-flex align-items-center gap-2 mb-2 justify-content-center justify-content-sm-start">
-                    <FiAward className="text-[var(--accent-primary)]" />
-                    <span className="text-[var(--text-muted)] small">{active.year}</span>
+                    <FiAward className="text-(--accent-primary)" />
+                    <span className="small text-(--text-muted)">{active.year}</span>
                   </div>
                   <h3 className="fs-4 fw-bold mb-2">{active.title}</h3>
-                  <p className="text-[var(--accent-primary)] fw-medium mb-3">
+                  <p className="fw-medium mb-3 text-(--accent-primary)">
                     {active.issuer}
                   </p>
                 </div>

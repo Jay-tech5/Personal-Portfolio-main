@@ -26,8 +26,9 @@ function GlassCardBase({
     <motion.div
       className={`glass-card p-4 ${className}`}
       whileHover={
-        hover ? { y: -4, transition: { duration: 0.2 } } : undefined
+        hover ? { y: -5, scale: 1.012, transition: { duration: 0.15, ease: "easeOut" } } : undefined
       }
+      whileTap={hover ? { scale: 0.98 } : undefined}
     >
       {children}
     </motion.div>

@@ -26,14 +26,15 @@ function SectionHeadingBase({
       data-aos={reducedMotion ? undefined : "fade-up"}
     >
       <span
-        className="inline-block text-sm font-semibold uppercase tracking-widest mb-3 gradient-text"
-        aria-hidden="true"
+        className="inline-block px-3 py-1 mb-3 rounded-full text-xs md:text-sm font-medium uppercase tracking-widest text-(--accent-primary) bg-[rgba(99,102,241,0.16)] border border-[rgba(99,102,241,0.4)] backdrop-blur-md shadow-sm"
       >
         {subtitle}
       </span>
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">{title}</h2>
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-3 text-shadow-sm text-(--text-primary)">
+        {title}
+      </h2>
       {description && (
-        <p className="text-[var(--text-secondary)] text-base md:text-lg leading-relaxed">
+        <p className="text-base md:text-lg leading-relaxed font-normal text-(--text-secondary)">
           {description}
         </p>
       )}
