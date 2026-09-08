@@ -5,7 +5,7 @@ import Image from "next/image";
 import { projects } from "@/data/portfolio";
 import SectionHeading from "@/components/ui/SectionHeading";
 import GlassCard from "@/components/ui/GlassCard";
-import { FiExternalLink, FiSearch } from "react-icons/fi";
+import { FiSearch } from "react-icons/fi";
 
 /** Projects section with search */
 export default function Projects() {
@@ -95,19 +95,6 @@ export default function Projects() {
                     <p className="small mb-3 flex-grow-1 text-(--text-secondary)">
                       {project.description}
                     </p>
-
-                    <div className="d-flex gap-2">
-                      <a
-                        href={project.liveUrl}
-                        className="btn-gradient btn-sm flex-grow-1 justify-content-center"
-                        target={project.liveUrl !== "#" ? "_blank" : undefined}
-                        rel={project.liveUrl !== "#" ? "noopener noreferrer" : undefined}
-                        aria-label={`Live demo of ${project.title}`}
-                      >
-                        <FiExternalLink size={14} />
-                        Live
-                      </a>
-                    </div>
                   </div>
                 </GlassCard>
               </div>
