@@ -3,8 +3,8 @@
 @import "aos/dist/aos.css";
 
 /* ============================================
-   CSS Variables — Dark & Light Theme
-   ============================================ */
+  CSS Variables — Dark Theme
+  ============================================ */
 :root {
   --bg-primary: #0a0a0f;
   --bg-secondary: transparent;
@@ -25,20 +25,6 @@
   --nav-bg-scrolled: rgba(8, 10, 22, 0.88);
   --section-padding: clamp(4rem, 8vw, 6rem);
   --transition-base: 0.15s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-[data-theme="light"] {
-  --bg-primary: #f8f9fc;
-  --bg-secondary: transparent;
-  --bg-tertiary: rgba(238, 240, 246, 0.6);
-  --text-primary: #0f172a;
-  --text-secondary: #334155;
-  --text-muted: #64748b;
-  --glass-bg: rgba(255, 255, 255, 0.82);
-  --glass-border: rgba(0, 0, 0, 0.12);
-  --glass-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  --nav-bg: rgba(248, 249, 252, 0.82);
-  --nav-bg-scrolled: rgba(248, 249, 252, 0.95);
 }
 
 @theme inline {
@@ -189,7 +175,6 @@ body {
   height: 3px;
   background: var(--gradient-primary);
   z-index: 9999;
-  transition: width 0.1s linear;
 }
 
 @keyframes loader-spin {
@@ -230,13 +215,6 @@ body {
 [data-theme="dark"] .form-control:focus {
   background: var(--glass-bg);
   border-color: var(--glass-border);
-  color: var(--text-primary);
-}
-
-[data-theme="light"] .form-control,
-[data-theme="light"] .form-control:focus {
-  background: white;
-  border-color: #dee2e6;
   color: var(--text-primary);
 }
 
@@ -329,35 +307,6 @@ body {
 .nav-icon-btn {
   color: #ffffff;
 }
-
-[data-theme="light"] .hero-copy {
-  background: linear-gradient(90deg, rgba(248, 249, 252, 0.82) 0%, rgba(248, 249, 252, 0.45) 78%, transparent 100%);
-}
-
-[data-theme="light"] .hero-copy,
-[data-theme="light"] .hero-copy p,
-[data-theme="light"] .hero-copy .fs-4 {
-  color: var(--text-primary);
-  text-shadow: none;
-}
-
-[data-theme="light"] .hero-copy .gradient-text {
-  filter: none;
-}
-
-[data-theme="light"] .nav-link-inactive,
-[data-theme="light"] .nav-link-active,
-[data-theme="light"] .nav-icon-btn {
-  color: var(--text-primary);
-  text-shadow: none;
-}
-
-[data-theme="light"] .btn-outline-glass {
-  background: rgba(255, 255, 255, 0.88);
-  color: var(--text-primary);
-  border-color: var(--glass-border);
-}
-
 
 @media (prefers-reduced-motion: reduce) {
   .live-background__video,

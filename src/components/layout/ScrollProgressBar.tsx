@@ -10,7 +10,7 @@ export default function ScrollProgressBar() {
     const bar = barRef.current;
     if (!bar) return;
 
-    let ticking = false;
+    let frameId: number | null = null;
 
     const update = () => {
       const docHeight =
@@ -19,13 +19,14 @@ export default function ScrollProgressBar() {
       const clamped = Math.min(Math.max(pct, 0), 100);
       bar.style.width = `${clamped}%`;
       bar.setAttribute("aria-valuenow", String(Math.round(clamped)));
-      ticking = false;
     };
 
     const onScroll = () => {
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(update);
+      if (frameId === null) {
+        frameId = requestAnimationFrame(() => {
+          frameId = null;
+          update();
+        });
       }
     };
 
@@ -33,6 +34,7 @@ export default function ScrollProgressBar() {
     window.addEventListener("resize", onScroll, { passive: true });
     update();
     return () => {
+      if (frameId !== null) cancelAnimationFrame(frameId);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
     };

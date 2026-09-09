@@ -54,7 +54,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.22, ease: "easeOut" }}
             >
-              {personalInfo.tagline} Focused on high-throughput ETL workflows, big data analytics, and cloud engineering.
+              {personalInfo.tagline}
             </motion.p>
 
             {/* CTA buttons */}

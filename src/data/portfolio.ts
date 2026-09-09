@@ -19,10 +19,10 @@ export const personalInfo = {
   phone: "",
   location: "India",
   resumeUrl: "/resume/jay-dixit-resume.html",
-  about: `I am a Data Engineer at Deloitte focused on building scalable data pipelines, optimizing storage architecture, and executing high-performance ETL workflows.
+  about: `I build reliable data systems that turn raw information into something useful — scalable, efficient, and built for real-world use.
 
-Passionate about cloud infrastructure, modern data platforms, and analytical engineering, I bridge the gap between complex data systems and enterprise business value.`,
-  tagline: "Designing scalable data pipelines & enterprise cloud solutions.",
+Focused on data engineering, I work with data pipelines, ETL processes, SQL, cloud platforms, and analytics. I enjoy designing systems that move, transform, and deliver data efficiently, from ingestion to production.`,
+  tagline: "Building reliable data systems from ingestion to production.",
 };
 
 /** Navigation links */

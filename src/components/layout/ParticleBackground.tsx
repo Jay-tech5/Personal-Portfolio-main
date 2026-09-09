@@ -4,16 +4,12 @@ import { useLiteMode, useReducedMotion } from "@/hooks/useReducedMotion";
 
 const LANDING_VIDEO_URL = "/landing-bg.mp4?v=anime-water-1";
 
-interface ParticleBackgroundProps {
-  showLiveBackground: boolean;
-}
-
 /** Full-bleed uploaded landing background video */
-export default function ParticleBackground({ showLiveBackground }: ParticleBackgroundProps) {
+export default function ParticleBackground() {
   const liteMode = useLiteMode();
   const reducedMotion = useReducedMotion();
 
-  if (liteMode || reducedMotion || !showLiveBackground) {
+  if (liteMode || reducedMotion) {
     return (
       <div
         className="particle-fallback position-fixed inset-0 w-100 h-100"

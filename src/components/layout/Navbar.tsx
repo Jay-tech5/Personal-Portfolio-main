@@ -3,18 +3,12 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { navLinks, personalInfo } from "@/data/portfolio";
-import ThemeToggle from "./ThemeToggle";
-import { FiMenu, FiX, FiPlay, FiPause } from "react-icons/fi";
+import { FiMenu, FiX } from "react-icons/fi";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { Z_INDEX, SCROLL_OFFSET_THRESHOLD, NAV_ACTIVE_SECTION_OFFSET } from "@/constants";
 
-interface NavbarProps {
-  showLiveBackground: boolean;
-  onToggleLiveBackground: () => void;
-}
-
 /** Responsive sticky navigation with mobile hamburger menu */
-export default function Navbar({ showLiveBackground, onToggleLiveBackground }: NavbarProps) {
+export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
@@ -105,19 +99,6 @@ export default function Navbar({ showLiveBackground, onToggleLiveBackground }: N
           </ul>
 
           <div className="d-flex align-items-center gap-3">
-            <button
-              type="button"
-              onClick={onToggleLiveBackground}
-              className="p-2 rounded-full glass-card border-0 d-flex align-items-center justify-content-center text-(--text-primary)"
-              style={{ width: 40, height: 40, background: "var(--glass-bg)" }}
-              aria-label={showLiveBackground ? "Hide live background" : "Show live background"}
-              title={showLiveBackground ? "Hide live background" : "Show live background"}
-            >
-              {showLiveBackground ? <FiPause size={16} /> : <FiPlay size={16} />}
-            </button>
-
-            <ThemeToggle />
-
             <button
               type="button"
               className="d-lg-none btn p-2 border-0 d-flex align-items-center justify-content-center nav-icon-btn"

@@ -11,6 +11,7 @@ export default function AOSProvider({ children }: { children: React.ReactNode })
       easing: "ease-out-quad",
       once: true,
       offset: 30,
+      disable: () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
     });
   }, []);
 

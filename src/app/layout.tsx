@@ -15,24 +15,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jay Dixit | Software Engineer & Java Developer",
+  title: "Jay Dixit | Data Engineer",
   description:
-    "Personal portfolio of Jay Dixit — Software Engineer, Java Developer, and Cloud & DevOps Enthusiast. Explore projects, skills, experience, and contact information.",
+    "Personal portfolio of Jay Dixit — Data Engineer focused on reliable data systems, scalable pipelines, ETL, SQL, cloud platforms, and analytics.",
   keywords: [
     "Jay Dixit",
-    "Software Engineer",
-    "Java Developer",
-    "React",
-    "Next.js",
+    "Data Engineer",
+    "Data Pipelines",
+    "ETL",
+    "SQL",
+    "Data Analytics",
+    "Cloud Engineering",
     "Portfolio",
-    "Cloud",
-    "DevOps",
   ],
   authors: [{ name: "Jay Dixit" }],
   openGraph: {
-    title: "Jay Dixit | Software Engineer",
+    title: "Jay Dixit | Data Engineer",
     description:
-      "Software Engineer, Java Developer, and Cloud & DevOps Enthusiast portfolio.",
+      "Data Engineer building reliable data systems, scalable pipelines, and efficient ETL workflows.",
     type: "website",
     locale: "en_US",
   },
