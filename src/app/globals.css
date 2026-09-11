@@ -10,8 +10,8 @@
   --bg-secondary: transparent;
   --bg-tertiary: rgba(26, 26, 46, 0.35);
   --text-primary: #ffffff;
-  --text-secondary: #e2e8f0;
-  --text-muted: #cbd5e1;
+  --text-secondary: #f1f5f9;
+  --text-muted: #e2e8f0;
   --accent-primary: #6366f1;
   --accent-secondary: #8b5cf6;
   --accent-tertiary: #06b6d4;
@@ -51,6 +51,7 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
   overflow-x: hidden;
   transition: background-color var(--transition-base), color var(--transition-base);
 }
@@ -78,6 +79,19 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+[class~="text-(--text-secondary)"],
+[class~="text-(--text-muted)"] {
+  text-shadow: 0 1px 14px rgba(3, 7, 18, 0.72);
+}
+
+[class~="text-(--text-secondary)"] {
+  color: var(--text-secondary) !important;
+}
+
+[class~="text-(--text-muted)"] {
+  color: var(--text-muted) !important;
 }
 
 .glass-card {
@@ -275,6 +289,18 @@ body {
 .form-control:focus {
   box-shadow: 0 0 0 0.2rem rgba(99, 102, 241, 0.25);
   border-color: var(--accent-primary);
+}
+
+.form-control {
+  background: rgba(8, 10, 22, 0.46);
+  border-color: rgba(255, 255, 255, 0.34);
+  color: var(--text-primary);
+  text-shadow: 0 1px 10px rgba(3, 7, 18, 0.7);
+}
+
+.form-control::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.9;
 }
 
 #particle-canvas {
