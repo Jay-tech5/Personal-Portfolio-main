@@ -332,6 +332,20 @@ body {
   color: #ffffff;
 }
 
+.site-nav {
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid transparent;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  transition: background-color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.site-nav--scrolled {
+  background-color: var(--nav-bg-scrolled);
+  border-bottom-color: var(--glass-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+
 .nav-icon-btn {
   color: #ffffff;
 }

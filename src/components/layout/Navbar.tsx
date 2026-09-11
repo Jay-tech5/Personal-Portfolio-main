@@ -96,19 +96,12 @@ export default function Navbar() {
 
   return (
     <header
-      className="position-fixed top-0 start-0 w-100"
+      className="site-header position-fixed top-0 start-0 w-100"
       style={{ zIndex: Z_INDEX.NAVBAR, height: "var(--nav-height)" }}
       role="banner"
     >
       <nav
-        className="h-100 d-flex align-items-center"
-        style={{
-          background: scrolled ? "var(--nav-bg-scrolled)" : "var(--nav-bg)",
-          backdropFilter: "blur(16px)",
-          WebkitBackdropFilter: "blur(16px)",
-          borderBottom: "1px solid var(--glass-border)",
-          transition: "background 0.3s ease, border-color 0.3s ease",
-        }}
+        className={`site-nav h-100 d-flex align-items-center${scrolled ? " site-nav--scrolled" : ""}`}
         aria-label="Main navigation"
       >
         <div className="section-container d-flex align-items-center justify-content-between w-100">
