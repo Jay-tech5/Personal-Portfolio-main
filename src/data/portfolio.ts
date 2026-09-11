@@ -138,7 +138,7 @@ export const projects: ProjectItem[] = [
     title: "Sales & Business Performance Dashboard",
     description:
       "Interactive Power BI dashboard analyzing sales and regional performance across 5,000+ records, reducing manual reporting time by 40%.",
-    image: "/projects/blog.svg",
+    image: "/projects/sales-dashboard.svg",
     technologies: ["SQL", "Power BI", "Excel"],
     category: "Data Analytics",
     liveUrl: "#",
@@ -149,7 +149,7 @@ export const projects: ProjectItem[] = [
     title: "Customer Churn Analysis",
     description:
       "Python-based churn analysis using Pandas and visualizations to identify customer behavior trends and support retention recommendations.",
-    image: "/projects/design-system.svg",
+    image: "/projects/churn-analysis.svg",
     technologies: ["Python", "Pandas", "Matplotlib", "Seaborn"],
     category: "Data Analytics",
     liveUrl: "#",
@@ -160,7 +160,7 @@ export const projects: ProjectItem[] = [
     title: "Excel-Based Financial Reporting Automation",
     description:
       "Automated financial reports with Excel VBA, PivotTables, and SQL, cutting manual effort by 50% and reducing reporting errors.",
-    image: "/projects/portfolio.svg",
+    image: "/projects/financial-report.svg",
     technologies: ["Excel", "VBA", "PivotTables", "SQL"],
     category: "Data Engineering",
     liveUrl: "#",
@@ -168,10 +168,10 @@ export const projects: ProjectItem[] = [
   },
   {
     id: "proj-4",
-    title: "expense tracker system",
+    title: "Expense Tracker System",
     description:
       "A full-featured expense tracking application with budgeting tools, spending analytics, expense categorization, and detailed financial reports for better money management.",
-    image: "/projects/taskmanager.svg",
+    image: "/projects/expense-tracker.svg",
     technologies: ["React", "Node.js", "Express", "MongoDB", "JWT"],
     category: "Full Stack",
     liveUrl: "#",
