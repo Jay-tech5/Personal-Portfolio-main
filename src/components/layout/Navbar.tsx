@@ -14,6 +14,9 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
   const reducedMotion = useReducedMotion();
   const ticking = useRef(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const firstMenuLinkRef = useRef<HTMLAnchorElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   // Cache sections array to avoid recreation on every scroll
   const sectionsRef = useRef<string[]>([]);
@@ -51,6 +54,45 @@ export default function Navbar() {
       document.body.style.overflow = "";
     };
   }, [menuOpen]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    firstMenuLinkRef.current?.focus();
+
+    const handleMenuKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        menuButtonRef.current?.focus();
+        return;
+      }
+
+      if (event.key !== "Tab" || !menuRef.current) return;
+
+      const focusable = menuRef.current.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      );
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener("keydown", handleMenuKeyDown);
+    return () => document.removeEventListener("keydown", handleMenuKeyDown);
+  }, [menuOpen]);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+    menuButtonRef.current?.focus();
+  };
 
   return (
     <header
@@ -100,9 +142,10 @@ export default function Navbar() {
 
           <div className="d-flex align-items-center gap-3">
             <button
+              ref={menuButtonRef}
               type="button"
               className="d-lg-none btn p-2 border-0 d-flex align-items-center justify-content-center nav-icon-btn"
-              onClick={() => setMenuOpen(!menuOpen)}
+              onClick={() => (menuOpen ? closeMenu() : setMenuOpen(true))}
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
               aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -117,6 +160,7 @@ export default function Navbar() {
         {menuOpen && (
           <motion.div
             id="mobile-menu"
+            ref={menuRef}
             className="d-lg-none position-fixed start-0 w-100 d-flex flex-column"
             style={{
               top: "var(--nav-height)",
@@ -134,8 +178,9 @@ export default function Navbar() {
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
+                    ref={link === navLinks[0] ? firstMenuLinkRef : undefined}
                     href={link.href}
-                    onClick={() => setMenuOpen(false)}
+                    onClick={closeMenu}
                     className="d-block py-3 fs-5 text-decoration-none text-(--text-primary) border-bottom mobile-nav-link"
                   >
                     {link.label}

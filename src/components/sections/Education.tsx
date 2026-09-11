@@ -15,6 +15,7 @@ export default function Education() {
     >
       <div className="section-container">
         <SectionHeading
+          id="education-heading"
           subtitle="Education"
           title="Academic Background"
           description="My educational qualifications and academic achievements."

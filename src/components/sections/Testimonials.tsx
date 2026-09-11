@@ -22,6 +22,7 @@ export default function Testimonials() {
       >
         <div className="section-container">
           <SectionHeading
+            id="testimonials-heading"
             subtitle="Testimonials"
             title="What People Say"
             description="Feedback from colleagues and clients I've worked with."
@@ -48,6 +49,7 @@ export default function Testimonials() {
     >
       <div className="section-container">
         <SectionHeading
+          id="testimonials-heading"
           subtitle="Testimonials"
           title="What People Say"
           description="Feedback from colleagues and clients I've worked with."

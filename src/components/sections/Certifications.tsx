@@ -25,6 +25,7 @@ export default function Certifications() {
       >
         <div className="section-container">
           <SectionHeading
+            id="certifications-heading"
             subtitle="Certifications"
             title="Credentials & Badges"
             description="Professional certifications validating my expertise."
@@ -44,6 +45,7 @@ export default function Certifications() {
     >
       <div className="section-container">
         <SectionHeading
+          id="certifications-heading"
           subtitle="Certifications"
           title="Credentials & Badges"
           description="Professional certifications validating my expertise."

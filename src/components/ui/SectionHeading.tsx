@@ -4,6 +4,7 @@ import { memo } from "react";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 interface SectionHeadingProps {
+  id?: string;
   subtitle: string;
   title: string;
   description?: string;
@@ -12,6 +13,7 @@ interface SectionHeadingProps {
 
 /** Reusable section heading with gradient accent */
 function SectionHeadingBase({
+  id,
   subtitle,
   title,
   description,
@@ -30,7 +32,7 @@ function SectionHeadingBase({
       >
         {subtitle}
       </span>
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-3 text-shadow-sm text-(--text-primary)">
+      <h2 id={id} className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-3 text-shadow-sm text-(--text-primary)">
         {title}
       </h2>
       {description && (

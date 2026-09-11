@@ -17,6 +17,7 @@ export default function About() {
     >
       <div className="section-container">
         <SectionHeading
+          id="about-heading"
           subtitle="About Me"
           title="Who I Am"
           description="Get to know more about my journey, passion, and what drives me."

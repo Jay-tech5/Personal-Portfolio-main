@@ -70,6 +70,7 @@ export default function Skills() {
     >
       <div className="section-container">
         <SectionHeading
+          id="skills-heading"
           subtitle="Skills"
           title="Technical Expertise"
           description="Technologies, frameworks, databases, and APIs I work with."

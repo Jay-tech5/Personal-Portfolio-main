@@ -16,6 +16,7 @@ export default function Experience() {
     >
       <div className="section-container">
         <SectionHeading
+          id="experience-heading"
           subtitle="Experience"
           title="Work Journey"
           description="My professional experience and the roles I've held along the way."

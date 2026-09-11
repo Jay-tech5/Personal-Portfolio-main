@@ -31,6 +31,7 @@ export default function Projects() {
     >
       <div className="section-container">
         <SectionHeading
+          id="projects-heading"
           subtitle="Projects"
           title="Featured Work"
           description="A selection of projects showcasing my skills and experience."

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 interface TypingAnimationProps {
   texts: string[];
@@ -20,9 +21,10 @@ export default function TypingAnimation({
   const [textIndex, setTextIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const reducedMotion = useReducedMotion();
 
   useEffect(() => {
-    if (!texts || texts.length === 0) return;
+    if (reducedMotion || !texts || texts.length === 0) return;
     const current = texts[textIndex % texts.length];
 
     let timer: NodeJS.Timeout;
@@ -53,11 +55,20 @@ export default function TypingAnimation({
     }
 
     return () => clearTimeout(timer);
-  }, [charIndex, isDeleting, textIndex, texts, speed, pauseDuration]);
+  }, [charIndex, isDeleting, reducedMotion, textIndex, texts, speed, pauseDuration]);
+
+  if (reducedMotion) {
+    return <span className={className}>{texts[0] ?? ""}</span>;
+  }
 
   return (
-    <span className={className} aria-live="polite">
-      {displayText}
+    <span className={className}>
+      <span aria-hidden="true">
+        {displayText}
+      </span>
+      <span className="visually-hidden" aria-live="polite">
+        {texts[textIndex % texts.length] ?? ""}
+      </span>
       <span className="animate-pulse text-(--accent-primary)" aria-hidden="true">
         |
       </span>

@@ -253,6 +253,12 @@ body {
   animation: live-video-fade 3.2s ease-out forwards;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .live-background__video {
+    display: none;
+  }
+}
+
 .live-background__overlay {
   position: absolute;
   inset: 0;
