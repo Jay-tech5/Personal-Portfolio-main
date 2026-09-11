@@ -43,7 +43,7 @@ export default function About() {
                 {personalInfo.email && (
                   <div className="d-flex align-items-center gap-3 small text-(--text-secondary)">
                     <FiMail className="text-(--accent-primary)" />
-                    <a href={`mailto:${personalInfo.email}`} className="text-decoration-none text-(--text-secondary)">
+                    <a href={`mailto:${personalInfo.email}`} className="interactive-link text-decoration-none">
                       {personalInfo.email}
                     </a>
                   </div>

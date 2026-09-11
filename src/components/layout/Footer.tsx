@@ -66,7 +66,7 @@ export default function Footer() {
                 <li key={link.href} className="mb-2">
                   <a
                     href={link.href}
-                    className="text-decoration-none text-(--text-secondary) small hover-text-accent fw-normal"
+                    className="interactive-link text-decoration-none small fw-normal"
                     style={{ transition: "color 0.2s" }}
                   >
                     {link.label}
@@ -86,7 +86,7 @@ export default function Footer() {
                 <li className="mb-2">
                   <a
                     href={`mailto:${personalInfo.email}`}
-                    className="text-decoration-none text-(--accent-primary) hover:text-white transition-colors"
+                    className="interactive-link text-decoration-none"
                   >
                     {personalInfo.email}
                   </a>
