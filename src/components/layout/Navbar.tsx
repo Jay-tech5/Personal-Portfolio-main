@@ -154,11 +154,10 @@ export default function Navbar() {
           <motion.div
             id="mobile-menu"
             ref={menuRef}
-            className="d-lg-none position-fixed start-0 w-100 d-flex flex-column"
+            className="d-lg-none position-fixed start-0 w-100 d-flex flex-column mobile-menu-surface"
             style={{
               top: "var(--nav-height)",
               height: "calc(100dvh - var(--nav-height))",
-              background: "var(--bg-primary)",
               zIndex: Z_INDEX.NAVBAR_MOBILE_MENU,
               overflowY: "auto",
             }}
