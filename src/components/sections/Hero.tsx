@@ -104,7 +104,7 @@ export default function Hero() {
                 }}
               >
                 <Image
-                  src="/profile/profile-sky.png"
+                  src="/profile/luffy-profile.png"
                   alt={`${personalInfo.name} profile photo`}
                   width={280}
                   height={280}
