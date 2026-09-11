@@ -155,6 +155,9 @@ export default function Navbar() {
             id="mobile-menu"
             ref={menuRef}
             className="d-lg-none position-fixed start-0 w-100 d-flex flex-column mobile-menu-surface"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile navigation"
             style={{
               top: "var(--nav-height)",
               height: "calc(100dvh - var(--nav-height))",

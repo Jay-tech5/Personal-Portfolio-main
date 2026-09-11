@@ -24,8 +24,11 @@ export default function PortfolioClient() {
         <ParticleBackground />
 
         <div id="main-content">
+          <a className="skip-link" href="#portfolio-content">
+            Skip to main content
+          </a>
           <Navbar />
-          <main>
+          <main id="portfolio-content">
             <Hero />
             <About />
             <Experience />
