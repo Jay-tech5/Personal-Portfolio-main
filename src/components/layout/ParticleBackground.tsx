@@ -1,17 +1,18 @@
 "use client";
 
-import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { useLiteMode, useReducedMotion } from "@/hooks/useReducedMotion";
 
 const LANDING_VIDEO_URL = "/landing-bg.mp4?v=anime-water-1";
 
 /** Full-bleed uploaded landing background video */
 export default function ParticleBackground() {
   const reducedMotion = useReducedMotion();
+  const liteMode = useLiteMode();
 
-  if (reducedMotion) {
+  if (reducedMotion || liteMode) {
     return (
       <div
-        className="particle-fallback position-fixed inset-0 w-100 h-100"
+        className={`particle-fallback position-fixed inset-0 w-100 h-100${liteMode ? " particle-fallback--lite" : ""}`}
         style={{ zIndex: 0, pointerEvents: "none" }}
         aria-hidden="true"
       />

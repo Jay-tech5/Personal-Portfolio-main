@@ -12,7 +12,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="section-padding d-flex align-items-center min-vh-100"
+      className="section-padding hero-section d-flex align-items-center min-vh-100"
       aria-labelledby="hero-heading"
     >
       <div className="section-container">
@@ -59,7 +59,7 @@ export default function Hero() {
 
             {/* CTA buttons */}
             <motion.div
-              className="d-flex flex-wrap gap-3"
+              className="hero-ctas d-flex flex-wrap gap-3"
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.28, ease: "easeOut" }}
@@ -73,7 +73,7 @@ export default function Hero() {
 
           <div className="col-lg-5 order-1 order-lg-2 d-flex justify-content-center">
             <motion.div
-              className="position-relative animate-float"
+              className="hero-avatar-wrap position-relative animate-float"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.6, delay: 0.25, ease: "easeOut" }}
@@ -126,7 +126,7 @@ export default function Hero() {
                 return (
                   <motion.span
                     key={item.icon}
-                    className="position-absolute d-flex align-items-center justify-content-center rounded-circle glass-card fs-5"
+                    className={`hero-floating-icon hero-floating-icon--${i === 2 ? "right" : "left"} position-absolute d-flex align-items-center justify-content-center rounded-circle glass-card fs-5`}
                     style={{
                       width: 44,
                       height: 44,
