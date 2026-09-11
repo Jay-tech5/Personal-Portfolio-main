@@ -25,7 +25,11 @@ function GlassCardBase({
   };
 
   if (reducedMotion) {
-    return <div className={`glass-card p-4 ${className}`}>{children}</div>;
+    return (
+      <div className={`glass-card p-4 ${className}`} onPointerMove={handlePointerMove}>
+        {children}
+      </div>
+    );
   }
 
   return (

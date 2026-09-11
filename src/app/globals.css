@@ -120,6 +120,24 @@ body {
   transition: opacity 0.25s ease;
 }
 
+.glass-card::after {
+  position: absolute;
+  top: calc(var(--pointer-y) - 48px);
+  left: calc(var(--pointer-x) - 48px);
+  z-index: -1;
+  width: 96px;
+  height: 96px;
+  content: "";
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 28px rgba(99, 102, 241, 0.2), inset 0 0 22px rgba(255, 255, 255, 0.06);
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.84);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
 .glass-card:hover {
   background: rgba(255, 255, 255, 0.13);
   border-color: rgba(99, 102, 241, 0.45);
@@ -128,6 +146,11 @@ body {
 
 .glass-card:hover::before {
   opacity: 1;
+}
+
+.glass-card:hover::after {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .section-container {
