@@ -10,8 +10,6 @@ import {
   SiNextdotjs,
   SiTailwindcss,
   SiBootstrap,
-  SiNodedotjs,
-  SiExpress,
   SiPython,
   SiMongodb,
   SiApachespark,
@@ -20,7 +18,6 @@ import {
   SiGithub,
 } from "react-icons/si";
 import { FaAws, FaCloud, FaDatabase, FaWarehouse } from "react-icons/fa6";
-import { TbApi } from "react-icons/tb";
 import { skills } from "@/data/portfolio";
 import SectionHeading from "@/components/ui/SectionHeading";
 import GlassCard from "@/components/ui/GlassCard";
@@ -35,8 +32,6 @@ const iconMap: Record<string, React.ReactNode> = {
   nextjs: <SiNextdotjs size={28} />,
   tailwind: <SiTailwindcss size={28} color="#06B6D4" />,
   bootstrap: <SiBootstrap size={28} color="#7952B3" />,
-  nodejs: <SiNodedotjs size={28} color="#339933" />,
-  express: <SiExpress size={28} />,
   python: <SiPython size={28} color="#3776AB" />,
   mongodb: <SiMongodb size={28} color="#47A248" />,
   sql: <FaDatabase size={28} color="#00758F" />,
@@ -46,7 +41,6 @@ const iconMap: Record<string, React.ReactNode> = {
   cloud: <FaCloud size={28} color="#3B82F6" />,
   airflow: <SiApacheairflow size={28} color="#017CEE" />,
   datawarehouse: <FaWarehouse size={28} color="#4B5563" />,
-  restapi: <TbApi size={28} color="#6366F1" />,
   git: <SiGit size={28} color="#F05032" />,
   github: <SiGithub size={28} />,
 };

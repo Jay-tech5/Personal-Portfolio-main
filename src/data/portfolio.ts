@@ -80,10 +80,10 @@ export const experiences: ExperienceItem[] = [
 export const education: EducationItem[] = [
   {
     id: "edu-1",
-    degree: "Bachelor of Computer Applications (BCA)",
+    degree: "BCA Graduate",
     university: "IILM University",
-    year: "2023 – 2026",
-    description: "Pursuing BCA with a focus on Software Development, Web Technologies, and Computer Applications.",
+    year: "Graduated 2026",
+    description: "Bachelor of Computer Applications with a focus on Software Development, Web Technologies, and Computer Applications.",
   },
   {
     id: "edu-2",
@@ -114,8 +114,6 @@ export const skills: SkillItem[] = [
   { name: "Bootstrap", level: 65, icon: "bootstrap", category: "frontend" },
 
   // Backend, Databases & APIs
-  { name: "Node.js", level: 77, icon: "nodejs", category: "backend" },
-  { name: "Express.js", level: 69, icon: "express", category: "backend" },
   { name: "Python", level: 76, icon: "python", category: "backend" },
   { name: "MongoDB", level: 71, icon: "mongodb", category: "backend" },
   { name: "SQL", level: 74, icon: "sql", category: "backend" },
@@ -125,7 +123,6 @@ export const skills: SkillItem[] = [
   { name: "Data Warehousing", level: 80, icon: "datawarehouse", category: "backend" },
   { name: "Cloud (AWS / Azure / GCP)", level: 70, icon: "cloud", category: "backend" },
   { name: "Apache Airflow", level: 70, icon: "airflow", category: "backend" },
-  { name: "REST API", level: 79, icon: "restapi", category: "backend" },
 ];
 
 /** Project categories for filtering */

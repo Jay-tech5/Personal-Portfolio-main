@@ -1,7 +1,7 @@
 "use client";
 
 import { navLinks, personalInfo, socialLinks } from "@/data/portfolio";
-import { FiTwitter, FiMail, FiHeart } from "react-icons/fi";
+import { FiTwitter, FiMail } from "react-icons/fi";
 
 const iconMap: Record<string, React.ReactNode> = {
   twitter: <FiTwitter size={20} aria-hidden="true" />,
@@ -17,7 +17,7 @@ export default function Footer() {
       className="section-padding border-top"
       style={{
         borderColor: "rgba(255, 255, 255, 0.18)",
-        background: "rgba(8, 10, 22, 0.68)",
+        background: "rgba(8, 10, 22, 0.18)",
         backdropFilter: "blur(14px)",
         WebkitBackdropFilter: "blur(14px)",
       }}
@@ -104,9 +104,6 @@ export default function Footer() {
         >
           <p className="small mb-0 text-(--text-muted)">
             © {currentYear} {personalInfo.name}. All rights reserved.
-          </p>
-          <p className="small mb-0 d-flex align-items-center gap-1 text-(--text-muted)">
-            Built with <FiHeart className="text-danger" size={14} aria-hidden="true" /> using React & Next.js
           </p>
         </div>
       </div>
